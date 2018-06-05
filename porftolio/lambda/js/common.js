@@ -9,13 +9,15 @@ $(document).ready(function (){
 	})
 });
 
-$("nav a").click(function(e)	{
+/*not добавлен для ссылки на главную*/
+$("nav a").not(":first").click(function(e)	{
 	e.preventDefault();
 	$('ul.navig').removeClass('open');
 	$('.button_menu').removeClass('change');
 	var href=$(this).attr("href");
 	$("html,body").animate({scrollTop:$(href).offset().top},1000);
 });
+
 
 $(".head_buttons a").click(function(e)	{
 	e.preventDefault();
