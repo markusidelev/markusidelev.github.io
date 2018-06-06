@@ -52,6 +52,8 @@
 .btn--sm {
   font-size: 0.75em; 
 }
+
+/************/
 .back_to_main{
   position: fixed !important;
   z-index: 9999;
