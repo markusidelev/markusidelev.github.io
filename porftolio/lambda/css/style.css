@@ -16,6 +16,10 @@
  	background: #c90;
  }
 
+ .back_to_main{
+ 	left: 10px;
+ }
+
  h2 {
  	font-size: 36px;
  	font-family: 'Yeseva One', cursive;
