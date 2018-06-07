@@ -12,7 +12,7 @@ body {
 	font-family: HelveticaNeue;
 }
 .welcome {
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 	min-height: 590px;
 	margin: 0 auto;
 	text-align: center;
@@ -58,7 +58,7 @@ body {
 	margin: 75px auto 45px;
 }
 header {
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 	min-height: 735px;
 	margin: 0 auto;
 	text-align: center;
@@ -67,7 +67,7 @@ header {
 	min-height: 60px;
 	border-bottom: 1px solid #dfdfdf;
 	border-top: 1px solid #dfdfdf;
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -183,7 +183,7 @@ nav a:hover {
 	text-align: center;
 	margin: 0 auto;
 	min-height: 100%;
-	max-width: 1200px;
+	/*max-width: 1200px;*/
 	background: url(..//img/background1.png) center top/cover no-repeat;
 	/*background-color: #618185;*/
 }
@@ -243,15 +243,16 @@ nav a:hover {
 	transform: scale(1.1);
 }
 .numbers {
-	max-height: 190px;
-	max-width: 1200px;
+	/*max-height: 190px;*/
+	/*max-width: 1200px;*/
 	margin: 0 auto;
-	background: url(../img/numbers.jpg) no-repeat;
+	background: url(../img/numbers.jpg) center top/cover no-repeat;
 	text-align: center;
 
 }
 .numbers-block {
 	display: flex;
+	flex-wrap: wrap;
 	margin: 0;
 	justify-content: space-around;
 
@@ -297,8 +298,8 @@ nav a:hover {
 .clients {
 	text-align: center;
 	margin: 0 auto;
-	height: 100%;
-	max-width: 1200px;
+	min-height: 350px;
+	/*max-width: 1200px;*/
 	background: url(..//img/background1.png) center top/cover no-repeat;
 	/*background-color: #618185;*/
 
@@ -325,17 +326,17 @@ nav a:hover {
 }
 .clients-block {
 	display: flex;
-	justify-content: space-around;
-	margin: 20px auto;
-	max-width: 950px;
+	/*justify-content: space-around;*/
+	/*margin: 20px auto;*/
+	/*max-width: 950px;*/
 	min-height: 100px;
 	flex-wrap: wrap;
 }
 .client {
 	width: 250px;
-	height: 70px;
-	margin: 0 20px;
-	padding: auto;
+	height: 62px;
+	margin:45px auto;
+	
 	display: inline-block;
 	vertical-align: center; 
 	box-sizing: border-box;	 	
@@ -427,21 +428,21 @@ font-family: 'Open Sans', sans-serif;*/
 	.arrows {
 		margin: 50px auto 20px;
 	}
-	.numbers{
+	/*.numbers{
 		display: none;
-	}
-}
-
-@media(max-width:320px){
-	.w-logo{
-		margin-top: 100px;
-		width: 250px;
-	}
-	.arrows {
-		margin: 30px auto 20px;
+		}*/
 	}
 
-}
+	@media(max-width:320px){
+		.w-logo{
+			margin-top: 100px;
+			width: 250px;
+		}
+		.arrows {
+			margin: 30px auto 20px;
+		}
+
+	}
 /* 
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto Slab', serif;
