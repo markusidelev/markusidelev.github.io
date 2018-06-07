@@ -17,7 +17,15 @@ a:hover{
 	color: #fff;
 	background: #f8cd53;
 }
-
+h2{
+	font-family: HelveticaBold;
+}
+h3{
+	font-family: HelveticaBold;
+}
+p{
+	font-family: HelveticaLight;
+}
 
 body {
 	background: #f0f2f4;
@@ -169,8 +177,9 @@ nav ul li a:hover {
 	padding-top: 180px;
 	font-size: 48px;
 	color: #fff;
-	font-weight: 800;
+	/*font-weight: 800;*/
 	line-height: 48px;
+	
 
 }
 .banner p {
@@ -178,6 +187,7 @@ nav ul li a:hover {
 	color: #fff;
 	font-weight: 300;
 	line-height: 30px;
+	font-family: 
 }
 .consultation {
 	display: block;
@@ -262,6 +272,7 @@ nav ul li a:hover {
 .service p {
 	font-size: 13px;
 	font-weight: 100;
+	font-family: 'Open Sans';
 }
 
 .approach {
@@ -428,6 +439,7 @@ nav ul li a:hover {
 	font-size: 20px;
 	color: #ffffff;
 	line-height: 20px;
+	font-family: 'He';
 }
 
 .ourwork .line {
@@ -489,6 +501,7 @@ nav ul li a:hover {
 	line-height: 16px;
 	font-weight: 500;
 	margin: 0;
+	font-family: HelveticaBold;
 }
 
 .work_img{
@@ -561,6 +574,7 @@ nav ul li a:hover {
 	padding: 40px 65px 0;
 	font-size: 15px;
 	font-weight: 500;
+	font-family: "HelveticaRegular";
 
 }
 
@@ -605,12 +619,16 @@ nav ul li a:hover {
 	vertical-align: center;
 	padding: 15px 30px;
 	margin: 35px auto 65px;
-	transition: 1s;
+	transition: 0.5s;
 	outline: none;
 }
 
 .fbform .submit:hover {
-	transform: scale(1.1);
+	
+	border: none;
+}
+.fbform .submit:active {
+	transform: scale(0.9);
 	border: none;
 }
 
@@ -677,7 +695,10 @@ nav ul li a:hover {
 }
 .footer form .email:focus {
 	/*border: 1px solid #de2b24;*/
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.4);
+}
+.footer form .email:focus::-webkit-input-placeholder {
+	color:rgba(206,206,206,0.5);
 }
 
 .footer form .subscribe {
@@ -693,10 +714,12 @@ nav ul li a:hover {
 	outline: none;
 	transition: 0.5s;
 }
-.footer form .subscribe:hover {
+.footer form .subscribe:active {
 	transform: scale(0.9);
 }
-
+.footer form .subscribe:hover{
+	border-color: #de2b24;
+}
 .author{
 	background: #515151;
 	text-align: center;
@@ -766,7 +789,7 @@ nav ul li a:hover {
 	.step .pagenumber {
 		display: none;
 	}
-	
+
 	.steptext h3 {
 		font-size: 	14px; 
 	}
@@ -820,8 +843,40 @@ nav ul li a:hover {
 	}
 }
 
+@font-face {
+	font-family: 'Open Sans';
+}
 
 @font-face {
-	font-family: HelveticaNeue;
-	src:url(../fonts/HelveticaNeue.ttf);
+	font-family: "HelveticaRegular"; 
+
+	src: url(../fonts/HelveticaRegular/HelveticaRegular.eot);
+	src:url(../fonts/HelveticaRegular/HelveticaRegular.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+	url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
 }
+
+@font-face {
+	font-family: "HelveticaBold"; 
+	src: url(../fonts/HelveticaBold/HelveticaBold.eot);
+	src:url(../fonts/HelveticaBold/HelveticaBold.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaBold/HelveticaBold.woff") format("woff"),
+	url("../fonts/HelveticaBold/HelveticaBold.ttf") format("truetype");  
+	font-style: normal; 
+	font-weight: bold; 
+} 
+
+@font-face {
+	font-family: "HelveticaLight"; 
+
+	src: url(../fonts/HelveticaLight/HelveticaLight.eot);
+	src:url(../fonts/HelveticaLight/HelveticaLight.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaLight/HelveticaLight.woff") format("woff"),
+	url("../fonts/HelveticaLight/HelveticaLight.ttf") format("truetype");  
+	font-style: normal; 
+	font-weight: light; 
+} 
+
+
