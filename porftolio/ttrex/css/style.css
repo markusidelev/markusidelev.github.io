@@ -1,3 +1,7 @@
+/*
+font-family: 'Roboto Slab';
+font-family: 'Open Sans';
+*/
 body {	
 	font-family: HelveticaNeue;
 }
@@ -62,7 +66,7 @@ header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	
+
 }
 .logo {
 	font-family: 'Open Sans', sans-serif;
@@ -262,7 +266,7 @@ nav a:hover {
 	line-height: 60px;
 }
 .numbers-info {
-	
+
 	margin: 0 0 0 15px;
 
 }
@@ -428,3 +432,35 @@ font-family: 'Open Sans', sans-serif;*/
 	}
 
 }
+
+@font-face {
+	font-family: "HelveticaRegular"; 
+
+	src: url(../fonts/HelveticaRegular/HelveticaRegular.eot);
+	src:url(../fonts/HelveticaRegular/HelveticaRegular.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaRegular/HelveticaRegular.woff") format("woff"),
+	url("../fonts/HelveticaRegular/HelveticaRegular.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+@font-face {
+	font-family: "HelveticaBold"; 
+	src: url(../fonts/HelveticaBold/HelveticaBold.eot);
+	src:url(../fonts/HelveticaBold/HelveticaBold.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaBold/HelveticaBold.woff") format("woff"),
+	url("../fonts/HelveticaBold/HelveticaBold.ttf") format("truetype");  
+	font-style: normal; 
+	font-weight: bold; 
+} 
+
+@font-face {
+	font-family: "HelveticaLight"; 
+
+	src: url(../fonts/HelveticaLight/HelveticaLight.eot);
+	src:url(../fonts/HelveticaLight/HelveticaLight.eot?iefix) format("embedded-opentype"),
+	url("../fonts/HelveticaLight/HelveticaLight.woff") format("woff"),
+	url("../fonts/HelveticaLight/HelveticaLight.ttf") format("truetype");  
+	font-style: normal; 
+	font-weight: light; 
+} 
