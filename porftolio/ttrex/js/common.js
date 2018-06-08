@@ -11,3 +11,7 @@ $("nav a").not(":first").click(function(e)	{
 	var href=$(this).attr("href");
 	$("html,body").animate({scrollTop:$(href).offset().top},1000);
 });
+
+$(".animated").hover(function(){
+	$(".animated").toggleClass("rubberBand infinite");
+});

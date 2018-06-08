@@ -3,16 +3,21 @@ font-family: 'Roboto Slab';
 font-family: 'Open Sans';
 font-family: "HelveticaRegular"; 
 */
-
+*{
+	margin: 0;
+	padding: 0;
+}
 p{
 	font-family: "HelveticaRegular"; 
 }
 
 body {	
 	font-family: HelveticaNeue;
+	/*margin: 0 auto;*/
+	/*width: 1200px;*/
 }
 .welcome {
-	/*max-width: 1200px;*/
+	
 	min-height: 590px;
 	margin: 0 auto;
 	text-align: center;
@@ -157,8 +162,8 @@ nav a:hover {
 }
 .line {
 	margin: 20px auto 35px;
-	// background: url(../img/line.png) no-repeat;
-	height: 3px;
+	
+	height: 2px;
 	width: 110px;
 	border-radius: 10%;
 	background-color: rgba(233,233,233,.6);
@@ -197,7 +202,7 @@ nav a:hover {
 	width: 240px;
 	height: 240px;
 	box-sizing: border-box;
-	margin: 20px auto 5px; 	
+	margin: 100px auto 70px; 	
 	box-sizing: border-box;
 
 }
@@ -215,7 +220,7 @@ nav a:hover {
 	padding-top: 25px;
 }
 
-.about-item h2 {
+.about-item h3 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 16px;
 	color: #fff;
@@ -278,7 +283,7 @@ nav a:hover {
 	margin: 0 0 0 15px;
 
 }
-.numbers-item h2 {
+.numbers-item h3 {
 	margin: 0;
 	font-weight: 700;
 	font-size: 50px;
@@ -342,6 +347,74 @@ nav a:hover {
 	box-sizing: border-box;	 	
 }
 
+.services{
+	text-align: center;
+
+}
+
+.services h2 {
+	margin: 0 auto;
+	padding: 75px 0 10px;
+	font-family: 'Roboto Slab', serif;
+	font-size: 30px;
+	font-weight: 800;
+	color:#303030;
+
+}
+.services p {
+	font-size: 22px;
+	color: #979797;
+	margin: 0;
+	font-family: HelveticaLight;
+}
+
+.services-block{
+	margin: 50px auto 0;
+	padding: 15px;
+	max-width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.service{
+	width: 280px;
+	height: 150px;
+	display: flex;
+	margin-bottom: 40px;
+	justify-content: space-between;
+}
+
+.service img{
+	width: 62px;
+	height: 64px;
+}
+
+.serv-text{
+	width: 200px;
+}
+
+.service .line{
+	margin: 15px 0;
+}
+
+.service h3{
+	text-align: left;
+	font-family: HelveticaLight;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 200;
+	color: #616161;
+}
+
+.service p{
+	text-align: left;
+	font-size: 13px;
+	line-height: 17px;
+	font-family: HelveticaLight;
+	font-weight: 200;
+	margin: 20px 0 0;
+}
 
 
 
