@@ -161,11 +161,10 @@ nav a:hover {
 	color: #484848;
 }
 .line {
-	margin: 20px auto 35px;
-	
+	margin: 20px auto 35px;	
 	height: 2px;
 	width: 110px;
-	border-radius: 10%;
+	/*border-radius: 10%;*/
 	background-color: rgba(233,233,233,.6);
 }
 .head-text p{
@@ -385,6 +384,10 @@ nav a:hover {
 	justify-content: space-between;
 }
 
+.service:hover.service h3{
+	color: #39a38f;
+}
+
 .service img{
 	width: 62px;
 	height: 64px;
@@ -403,7 +406,7 @@ nav a:hover {
 	font-family: HelveticaLight;
 	font-size: 18px;
 	text-transform: uppercase;
-	font-weight: 200;
+	font-weight: 500;
 	color: #616161;
 }
 
@@ -416,7 +419,59 @@ nav a:hover {
 	margin: 20px 0 0;
 }
 
+.quote{
+	display: block;
+	box-sizing: content-box;
+	text-align: center;
+	background: url(..//img/background1.png) center top/cover no-repeat;
 
+}
+.quote-block{
+	max-width: 730px;
+	margin: 0 auto;
+	padding: 70px 30px;
+	box-sizing: border-box;
+}
+
+.quote-block .line{
+	background-color:#fff;
+}
+
+.quote-block p{
+	font-size: 21px;
+	line-height: 27px;
+	color:#fff;
+	font-family: HelveticaLight;
+	letter-spacing: 1px;
+	text-align: center;
+	position: relative;
+}
+.quote-block p b{
+	font-family: HelveticaNeue;
+	font-weight: 800;
+}
+
+.quote-block span p{
+	font-size: 18px;
+}
+
+.quote-block .quote-text:before{
+	content: url(../img/quote.png);
+	position: absolute;
+	width: 65px;
+	height: 45px;
+	top:-20px;
+	left: -60px;
+}
+
+.quote-block .quote-text:after{
+	content: url(../img/quote.png);
+	position: absolute;
+	width: 65px;
+	height: 45px;
+	top: 80px;
+	right: -30px;
+}
 
 
 /* font-family: HelveticaNeue;
