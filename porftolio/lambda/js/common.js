@@ -28,3 +28,7 @@ $(".head_buttons a").click(function(e)	{
 function changeToCross(x) {
 	x.classList.toggle("change");
 };
+
+$(".animated").hover(function(){
+	$(".animated").toggleClass("rubberBand infinite");
+});

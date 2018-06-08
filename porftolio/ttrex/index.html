@@ -48,7 +48,7 @@
 				<a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
 			</div>
 		</div>
-		<div class="head-text">
+		<div class="head-text" id="about">
 			<h1>About <span>Ttrex</span></h1>
 			<h2>Creative studio</h2>
 			<div class="line"></div>	
@@ -60,7 +60,7 @@
 
 	</header>
 	
-	<section class="about">
+	<section class="about" id="services">
 		<div class="about-block">
 			<div class="about-item">
 				<div class="about-icon"><i class="fa fa-desktop" aria-hidden="true"></i></div>
@@ -178,17 +178,13 @@
 </section>
 
 
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="js/jquery.fancybox.js"></script>
+
 <script type="">
-	$(".arrow").click(function(e)	{
-		e.preventDefault();
-		var href=$(this).attr("href");
-		$("html,body").animate({scrollTop:$(href).offset().top},1000);
-	});
+	
 </script>
 
 
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/common.js"></script>
 </body>
 </html>

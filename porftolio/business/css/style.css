@@ -723,15 +723,16 @@ nav ul li a:hover {
 .author{
 	background: #515151;
 	text-align: center;
-	height: 75px;
+	
 }
 .author a p{
-	width: 80%;
-	margin:0px auto;
-	padding: 27px 0 0;
-	font-size: 14px;
-	line-height: 14px;
-	font-weight: 600;
+	font-weight: 900;
+	display: inline-block;
+	padding: 25px 0 25px;
+	margin: 0 auto;
+	font-size: 16px;
+	
+	
 	color: #cecece;
 
 }
