@@ -502,13 +502,28 @@ nav a:hover {
 	border-style: solid;
 	position: relative;
 	top:1px;
-
 }
-.team-block{
+
+.team-block {
 	height: 430px;
 	background: #f0f0f0;
 }
 
+.team-block .swiper-container {
+	max-width: 1060px;
+	height: 350px;
+	margin: 0 auto;
+}
+
+.team-block .swiper-wrapper{
+	text-align: center;
+}
+
+.team-block .team-slide {
+	margin: 0 auto;
+	width: 300px;
+	height: 300px;
+}
 
 
 
