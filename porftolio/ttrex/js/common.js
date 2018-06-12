@@ -49,3 +49,4 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     	}, 
     }
 })
+
