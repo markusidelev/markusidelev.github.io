@@ -619,7 +619,7 @@ nav a:hover {
 }
 
 .portfolio-categories{
-	width: 450px;
+	max-width: 450px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -646,7 +646,7 @@ nav a:hover {
 	display: flex;
 	margin: 25px auto;
 	flex-wrap: wrap;
-	justify-content: space-around: ;
+	justify-content: space-around;
 	max-width: 1000px;
 
 }
@@ -795,6 +795,12 @@ font-family: 'Open Sans', sans-serif;*/
 		}*/
 	}
 
+	@media(max-width: 450px){
+		.portfolio-categories{
+			flex-direction: column;
+		}
+	}
+
 	@media(max-width:320px){
 		.w-logo{
 			margin-top: 100px;
@@ -803,6 +809,7 @@ font-family: 'Open Sans', sans-serif;*/
 		.arrows {
 			margin: 30px auto 20px;
 		}
+
 
 	}
 /* 
