@@ -200,12 +200,13 @@ nav a:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding: 70px 0 70px;
 }
 .about-item {
 	width: 240px;
 	height: 240px;
 	box-sizing: border-box;
-	margin: 100px auto 70px; 	
+	margin: 10px auto 10px; 	
 	box-sizing: border-box;
 
 }
@@ -773,6 +774,8 @@ font-family: 'Open Sans', sans-serif;*/
 	nav li a{
 		font-size: 20px;
 		line-height: 30px;
+		display: block;
+		width: 100%;
 	}
 	nav li:hover nav li {
 		border-bottom: 3px solid #578491;
