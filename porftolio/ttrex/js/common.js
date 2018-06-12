@@ -24,9 +24,11 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     spaceBetween: 20,
     loop: true,
 
+
     // If we need pagination
     pagination: {
     	el: '.swiper-pagination',
+    	clickable: true,
     },
 
     // Navigation arrows
