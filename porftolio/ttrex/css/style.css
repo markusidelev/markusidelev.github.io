@@ -645,7 +645,7 @@ nav a:hover {
 
 .portfolio-block{
 	display: flex;
-	margin: 25px auto;
+	margin: 25px auto 50px;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	max-width: 1000px;
@@ -691,11 +691,7 @@ nav a:hover {
 	text-decoration: none;
 	color: #fff;
 	position: relative;
-
-
-
 }
-
 
 
 .portfolio-block img{
@@ -706,12 +702,54 @@ nav a:hover {
 
 }
 
+.video-section{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	background: url(..//img/background1.png) center top/cover no-repeat;
+	padding: 65px 125px;
+}
+
+.video-section-text{
+	width: 380px;
+	min-height: 260px;
+	color: #fff;
+}
+
+.video-section-text h3{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	font-size: 24px;
+	text-transform: uppercase;
+
+}
+.video-section-text .line{
+	margin: 5px 0 25px;
+}
+.video-section-text p{
+	font-family: HelveticaRegular;
+	font-size: 12px; 
+	line-height: 20px;
+	font-weight: 100;
+	color: #dee7e7;
+}
+
+.video-section-text span {
+	
+	text-transform: uppercase;
+	color: #fff;
+	font-family: HelveticaRegular;
+	font-size: 14px;
+	font-weight: 900;
+}
 
 
 
-/* font-family: HelveticaNeue;
+/* 
+font-family: HelveticaNeue;
 font-family: 'Roboto Slab', serif;
-font-family: 'Open Sans', sans-serif;*/
+font-family: 'Open Sans', sans-serif;
+*/
 
 @font-face
 {
