@@ -754,6 +754,58 @@ nav a:hover {
 	box-shadow: 0px 0px 0px 3px #ffffff;
 }
 
+.twitter-section{
+	background: url(../img/background2.png) center top/cover no-repeat;
+	height: 243px;
+	text-align: center;
+	padding-top: 60px;
+	padding-left: 9%;
+	padding-right: 9%;
+	position: relative;
+	box-sizing: border-box;
+	color: #ffffff;
+
+}
+.twitter-section .line{
+	text-align: left;
+	margin: 5px 0 30px;
+	background-color: #ffffff;
+}
+
+.twitter-section h3{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 24px;
+	text-align: left;
+
+
+}
+
+.twitter-section p{
+	font-size: 22px;
+	font-family: HelveticaLight;
+	font-weight: 100;
+	text-align: left;
+
+}
+
+.twitter-section p a{
+	font-weight: 900;
+	font-family: HelveticaBold;
+
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.twitter-section i {
+	position: absolute;
+	font-size: 65px;
+	top: 40px;
+
+	margin: 0 auto;
+
+}
 
 
 /* 
@@ -846,28 +898,32 @@ font-family: 'Open Sans', sans-serif;
 	.arrows {
 		margin: 50px auto 20px;
 	}
-	/*.numbers{
-		display: none;
-		}*/
+	
+	.twitter-section{
+		padding-top: 40px;
+	}
+	.twitter-section i{
+		top:20px;
+	}
+}
+
+@media(max-width: 450px){
+	.portfolio-categories{
+		flex-direction: column;
+	}
+}
+
+@media(max-width:320px){
+	.w-logo{
+		margin-top: 100px;
+		width: 250px;
+	}
+	.arrows {
+		margin: 30px auto 20px;
 	}
 
-	@media(max-width: 450px){
-		.portfolio-categories{
-			flex-direction: column;
-		}
-	}
 
-	@media(max-width:320px){
-		.w-logo{
-			margin-top: 100px;
-			width: 250px;
-		}
-		.arrows {
-			margin: 30px auto 20px;
-		}
-
-
-	}
+}
 /* 
 font-family: 'Open Sans', sans-serif;
 font-family: 'Roboto Slab', serif;
