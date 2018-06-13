@@ -707,13 +707,14 @@ nav a:hover {
 	justify-content: space-around;
 	flex-wrap: wrap;
 	background: url(..//img/background1.png) center top/cover no-repeat;
-	padding: 65px 125px;
+	padding: 50px 50px;
 }
 
 .video-section-text{
 	width: 380px;
 	min-height: 260px;
 	color: #fff;
+	/*margin-bottom: 30px;*/
 }
 
 .video-section-text h3{
@@ -729,18 +730,28 @@ nav a:hover {
 .video-section-text p{
 	font-family: HelveticaRegular;
 	font-size: 12px; 
-	line-height: 20px;
+	line-height: 18px;
 	font-weight: 100;
 	color: #dee7e7;
+	margin-bottom: 30px;
 }
 
-.video-section-text span {
-	
+.visit-button {
+	margin: 20px 0 20px;
 	text-transform: uppercase;
 	color: #fff;
 	font-family: HelveticaRegular;
 	font-size: 14px;
 	font-weight: 900;
+	border: 2px solid #ffffff;
+	padding: 10px 25px;
+	line-height: 14px;
+	letter-spacing: 1px;
+	transition: 0.5s;
+}
+
+.visit-button:hover {
+	box-shadow: 0px 0px 0px 3px #ffffff;
 }
 
 
@@ -764,6 +775,10 @@ font-family: 'Open Sans', sans-serif;
 		max-height: 365px;
 
 	}
+	.video-section-text{
+		margin-bottom: 30px;
+	}
+
 }
 @media(max-width:850px) {
 	.numbers-item {
