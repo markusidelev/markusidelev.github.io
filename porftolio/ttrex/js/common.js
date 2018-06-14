@@ -52,3 +52,6 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     }
 })
 
+$("input:required").addClass('required');
+
+
