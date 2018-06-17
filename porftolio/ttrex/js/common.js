@@ -52,6 +52,9 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     }
 })
 
-$("input:required").addClass('required');
+// $("input:required").addClass('required');
 
+$(".animated").hover(function(){
+	$(".animated").toggleClass("rubberBand infinite");
+});
 

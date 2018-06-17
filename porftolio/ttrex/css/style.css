@@ -827,18 +827,21 @@ nav a:hover {
 	font-family: HelveticaLight;
 }
 .ocean{
-	/*position: relative;*/
+	/*box-sizing: border-box;*/
+	overflow: hidden;
 	
 	height: 459px;
 	background: url(../img/background3.png) center top/cover no-repeat;
-	padding-top:100px;
+	/*padding-top:145px;*/
 }
 
 .ocean-logo{
 	width: 170px;
 	height: 66px;
 	background: #fff;
-	margin: 0 auto 0;
+	margin: 145px auto 0;
+	/*margin-top: 145px;*/
+
 	/*overflow: hidden;*/
 }
 .ocean-logo::after{
@@ -874,16 +877,17 @@ nav a:hover {
 .form-block{
 	position: relative;
 	background: url(../img/background4.png) center top/cover no-repeat;
-	min-height: 598px;
+	min-height: 600px;
 	text-align: left;
 
 }
 
 .form-box{
+
 	position: absolute;
 	margin: 0 auto;
-	height: 660px;
-	width: 940px;
+	min-height: 660px;
+	max-width: 940px;
 	background: #fff;
 	bottom: 50px;
 	margin-left: auto;
@@ -891,15 +895,18 @@ nav a:hover {
 	left: 0;
 	right: 0;
 	display: flex;
-	/*flex-wrap: wrap;*/
+	justify-content: space-between;
+	flex-wrap: wrap;
 	padding: 0 20px;
 }
 
 form{
+	position: relative;
 	display: flex;
+	/*box-sizing: border-box;*/
 	flex-direction: column;
-	width: 100%;
-	margin: 20px;
+	width: 540px;
+	margin: 20px auto;
 	min-height: 620px;
 }
 form label{
@@ -912,15 +919,18 @@ form label{
 }
 
 form input{
+	width: 95%;
 	height: 45px;
 	border: 1px solid #e2e2e2;
 	margin-bottom: 10px;
 }
 
 form label span{
-	left: 100%;
+	left: 85%;
 	font-size: 12px;
-	position: relative;
+	position: absolute;
+	color: #39a38f;
+
 }
 
 #message-form{
@@ -942,9 +952,60 @@ input[type=submit]:hover {
 }
 
 .contact-info{
-	margin: 40px 20px;
+	/*margin: 40px 60px 0 45px;*/
+	margin: 45px auto;
+	width: 270px;
+}
+.contact-info h3{
+	font-family: 'Roboto Slab', serif;
+	font-size: 23px;
+	margin-bottom: 30px;
+
 }
 
+.contact-info p{
+	font-family: HelveticaRegular;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+.contact-info-block-box{
+	display: flex;
+	margin: 22px auto;
+
+}
+
+.contact-info-block-box img{
+	/*display: block;*/
+	width: 42px;
+	height: 60px;
+}
+
+.contact-info-block-text{
+	display: flex;
+	flex-direction: column;
+	margin: 10px 20px;
+	text-align: left;
+}
+
+.contact-info-block-text p{
+	margin: 0;
+	font-family: HelveticaLight;
+	/*font-weight: 100px;*/
+	
+	font-size: 18px;
+	color: black;
+
+}
+
+.contact-info-block-text a{
+
+	margin: 0;
+	font-family: HelveticaLight;
+	/*font-weight: 100px;*/
+	font-size: 18px;
+	color: black;
+}
 
 
 /* 
@@ -1044,11 +1105,16 @@ font-family: 'Open Sans', sans-serif;
 	.twitter-section i{
 		top:20px;
 	}
+	
+
 }
 
 @media(max-width: 450px){
 	.portfolio-categories{
 		flex-direction: column;
+	}
+	form label span{
+		left:80%;
 	}
 }
 
