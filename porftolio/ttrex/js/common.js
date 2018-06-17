@@ -1,3 +1,13 @@
+$(".author .animated").hover(function(){
+    $(".author .animated").toggleClass("rubberBand infinite");
+});
+
+$(".up-arrow").hover(function(){
+    $(".up-arrow").toggleClass("fadeOutUp infinite");
+});
+
+
+
 $(".arrow").click(function(e)	{
 	e.preventDefault();
 	var href=$(this).attr("href");
@@ -12,9 +22,13 @@ $("nav a").not(":first").click(function(e)	{
 	$("html,body").animate({scrollTop:$(href).offset().top},1000);
 });
 
-$(".animated").hover(function(){
-	$(".animated").toggleClass("rubberBand infinite");
+$(".up-arrow").click(function(e)	{
+	e.preventDefault();
+	var href=$(this).attr("href");
+	$("html,body").animate({scrollTop:$(href).offset().top},1000);
 });
+
+
 
 var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     // Optional parameters
@@ -50,11 +64,9 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     		slidesPerView: '1',
     	}, 
     }
-})
-
-// $("input:required").addClass('required');
-
-$(".animated").hover(function(){
-	$(".animated").toggleClass("rubberBand infinite");
 });
+
+
+
+
 
