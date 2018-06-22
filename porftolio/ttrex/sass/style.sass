@@ -33,7 +33,8 @@ body
 	min-height: 590px
 	margin: 0 auto
 	text-align: center
-	background: url(../img/Header.jpg) center top/cover no-repeat
+
+	+background-mix($header-img-url)
 
 	.w-logo
 		margin: 160px auto 0
@@ -122,7 +123,7 @@ header
 						font-family: $font-roboto
 						font-weight: 400
 						font-size: 14px
-						color: $grey
+						color: $brown
 						line-height: 20px
 
 						&:hover
@@ -181,5 +182,272 @@ header
 			height: 382px
 			width: 950px
 			margin: 30px auto 0
-			background: url(../img/head_img.jpg) center top/cover no-repeat
+			+background-mix($head-img-url)
 			overflow: hidden
+
+.about
+	text-align: center
+	margin: 0 auto
+	min-height: 100%
+	+background-mix($back-one-url)
+
+	.about-block
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		padding: 70px 0 70px
+
+		.about-item
+			width: 240px
+			height: 240px
+			box-sizing: border-box
+			margin: 10px auto 10px
+			box-sizing: border-box
+
+			.about-icon
+				border: 6px solid $prime-white
+				width: 95px
+				height: 95px
+				margin: auto
+				border-radius: 50%
+
+				i
+					color: $prime-white
+					font-size: 50px
+					padding-top: 25px
+
+			h3
+				font-family: $font-roboto
+				font-size: 16px
+				color: $prime-white
+				font-weight: 400
+				margin: 15px auto
+			p
+				font-size: 12px
+				color: $prime-white
+				margin: 0 auto
+				line-height: 15px
+				font-family: $font-regular
+
+			.learn-button
+				display: inline-block
+				text-decoration: none
+				color: $prime-white
+				font-style: 14px
+				margin: 10px auto 0
+				transition: .5s
+
+				&:hover
+					transform: scale(1.1)
+
+.numbers
+	margin: 0 auto
+	+background-mix($back-number-url)
+
+	.numbers-block
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		flex-wrap: wrap
+		margin: 0 auto
+		justify-content: space-around
+
+		.numbers-item
+			max-width: 210px
+			max-height: 70px
+			margin: 60px auto
+			display: flex
+
+			.numbers-icon
+				float: left
+				font-size: 60px
+				color: $prime-white
+				margin: 0
+				line-height: 60px
+
+			.numbers-info
+				margin: 0 0 0 15px
+
+				h3
+					margin: 0
+					font-weight: 700
+					font-size: 50px
+					color: $prime-white
+					line-height: 50px
+					text-align: left
+					font-family: $font-bold
+
+				p
+					@extend h3
+					font-size: 18px
+					line-height: 20px
+					font-family: $font-regular
+
+.clients
+	text-align: center
+	margin: 0 auto
+	min-height: 350px
+	+background-mix($back-one-url)
+
+	h2
+		margin: 0 auto
+		padding: 75px 0 10px
+		font-family: $font-sans
+		font-size: 30px
+		font-weight: 700
+		color: $prime-white
+
+	p
+		font-family: 22px
+		color: $prime-white
+		margin: 0
+
+	.line
+		background: $prime-white
+		height: 1px
+		margin: 10px auto 0
+
+	.clients-block
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			min-height: 100px
+			flex-wrap: wrap
+
+
+			.client
+				width: 250px
+				height: 62px
+				margin: 45px auto
+				display: inline-block
+				box-sizing: border-box
+
+.services
+	text-align: center
+
+	h2
+		margin: 0 auto
+		padding: 75px 0 10px
+		font-family: $font-roboto
+		font-size: 30px
+		font-weight: 800
+		color: $prime-white
+
+	p
+		font-size: 22px
+		color: $grey
+		margin: 0
+		// font-family: $font-light
+
+	.services-block
+		margin: 50px auto 0
+		padding: 15px
+		max-width: 1000px
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+
+		.service
+			width: 280px
+			height: 150px
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			margin-bottom: 40px
+			justify-content: space-between
+
+			img
+				width: 62px
+				height: 64px
+
+			.serv-text
+				width: 200px
+
+				h3
+					text-align: left
+					font-family: $font-light
+					font-size: 18px
+					text-transform: uppercase
+					font-weight: 500
+					color: $brown
+
+				.line
+					margin: 15px 0
+
+				p
+					text-align: left
+					font-size: 13px
+					line-height: 17px
+					font-family: $font-light
+					font-weight: 200
+					margin: 20px 0 0
+
+			&:hover h3
+				color: $green
+
+.quote
+	display: block
+	box-sizing: border-box
+	text-align: center
+	+background-mix($back-one-url)
+
+	.quote-block
+		max-width: 730px
+		margin: 0 auto
+		padding: 70px 30px
+		box-sizing: border-box
+
+
+		p
+			font-size: 21px
+			line-height: 27px
+			color: $prime-white
+			font-family: $font-light
+			letter-spacing: 1px
+			text-align: center
+			position: relative
+
+
+			b
+				font-family: $font-neue
+				font-weight: 800
+
+		.quote-text
+			&::before
+				content: url(../img/quote.png)
+				position: absolute
+				width: 65px
+				height: 45px
+				top: -20px
+				left: -60px
+
+			&::after
+
+				content: url(../img/quote.png)
+				position: absolute
+				width: 65px
+				height: 45px
+				top: 80px
+				right: -30px
+
+
+		.line
+			background: $prime-white
+
+		span
+		p
+			font-size: 18px
+			color: $prime-white
+
+.team
+	text-align: center
+
+	h2
+		margin: 0
+		padding: 75px 0 10px
+		font-family: $font-roboto
+		font-size: 30px
+		font-weight: 800
+		color: $brown
