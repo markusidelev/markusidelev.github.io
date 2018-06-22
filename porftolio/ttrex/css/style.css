@@ -381,7 +381,7 @@ header .head-text .img {
   font-family: "Roboto Slab", serif;
   font-size: 30px;
   font-weight: 800;
-  color: #ffffff;
+  color: #484848;
 }
 .services p {
   font-size: 22px;
@@ -425,7 +425,7 @@ header .head-text .img {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 500;
-  color: #484848;
+  color: #616161;
 }
 .services .services-block .service .serv-text .line {
   margin: 15px 0;
