@@ -1,42 +1,219 @@
 @font-face {
   font-family: "HelveticaRegular";
-  src: url("../fonts/HelveticaRegular/HelveticaRegular.ttf"); }
+  src: url("../fonts/HelveticaRegular/HelveticaRegular.ttf");
+}
 @font-face {
   font-family: "HelveticaBold";
-  src: url(../fonts/HelveticaBold/HelveticaBold.ttf); }
+  src: url(../fonts/HelveticaBold/HelveticaBold.ttf);
+}
 @font-face {
   font-family: "HelveticaLight";
-  src: url(../fonts/HelveticaLight/HelveticaLight.ttf); }
+  src: url(../fonts/HelveticaLight/HelveticaLight.ttf);
+}
 @font-face {
   font-family: "HelveticaNeue";
-  src: url(../fonts/HelveticaNeue.ttf); }
+  src: url(../fonts/HelveticaNeue.ttf);
+}
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 *::-moz-selection {
   color: #ffffff;
-  background: #578491; }
+  background: #578491;
+}
 
 *::selection {
   color: #ffffff;
-  background: #578491; }
+  background: #578491;
+}
+
+.line {
+  margin: 20px auto 35px;
+  height: 2px;
+  width: 110px;
+  background-color: rgba(233, 233, 233, 0.6);
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 p {
-  font-family: HelveticeRegular; }
+  font-family: HelveticeRegular;
+}
 
 body {
-  font-family: HelveticaNeue; }
+  font-family: HelveticaNeue;
+}
 
 .welcome {
   min-height: 590px;
   margin: 0 auto;
   text-align: center;
-  background: url(../img/Header.jpg) center top/cover no-repeat; }
-  .welcome .w-logo {
-    margin: 160px auto 0; }
+  background: url(../img/Header.jpg) center top/cover no-repeat;
+}
+.welcome .w-logo {
+  margin: 160px auto 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.welcome .w-logo:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.welcome .w-block {
+  width: 720px;
+  height: 100px;
+  border: 5px solid #ffffff;
+  margin: 55px auto 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.welcome .w-block h2, .welcome .w-block p {
+  font-family: "Roboto Slab", serif;
+  color: #ffffff;
+}
+.welcome .w-block h2 {
+  font-size: 34px;
+  margin: 20px auto 10px;
+  text-transform: capitalize;
+  font-weight: 400;
+  line-height: 35px;
+}
+.welcome .w-block p {
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 19px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+.welcome .arrows {
+  margin: 75px auto 45px;
+}
+
+header {
+  min-height: 735px;
+  margin: 0 auto;
+  text-align: center;
+}
+header .menu {
+  min-height: 60px;
+  border-bottom: 1px solid #dfdfdf;
+  border-top: 1px solid #dfdfdf;
+  text-align: center;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .menu .logo {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #578491;
+  font-size: 30px;
+  margin: 20px auto;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+header .menu .logo:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+header .menu nav {
+  padding-top: 27px;
+}
+header .menu nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header .menu nav ul li {
+  margin: 0 20px;
+}
+header .menu nav ul li a {
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #484848;
+  line-height: 20px;
+}
+header .menu nav ul li a:hover {
+  color: #578491;
+}
+header .menu .socials {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 28px;
+  margin: 0 auto;
+}
+header .menu .socials a {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #dfdfdf;
+}
+header .menu .socials a:hover {
+  color: #578491;
+}
+header .head-text {
+  margin: 60px auto 0;
+}
+header .head-text h1 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 700;
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #484848;
+  margin: 0 auto;
+}
+header .head-text h1 span {
+  color: #578491;
+}
+header .head-text h2 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 10px auto 0;
+  line-height: 30px;
+  color: #484848;
+}
+header .head-text p {
+  font-family: "Open Sans", sans-serif;
+  font-style: 17px;
+  line-height: 25px;
+  margin: 0 auto;
+  color: #484848;
+}
+header .head-text .img {
+  height: 382px;
+  width: 950px;
+  margin: 30px auto 0;
+  background: url(../img/head_img.jpg) center top/cover no-repeat;
+  overflow: hidden;
+}
 
 /*# sourceMappingURL=style.css.map */

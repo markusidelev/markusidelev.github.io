@@ -62,11 +62,6 @@ var mySwiper = new Swiper ('.team .team-block .swiper-container', {
     	},
     	700:{
     		slidesPerView: '1',
-    	}, 
+    	},
     }
 });
-
-
-
-
-
