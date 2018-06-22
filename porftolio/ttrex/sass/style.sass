@@ -451,3 +451,99 @@ header
 		font-size: 30px
 		font-weight: 800
 		color: $brown
+
+	p
+		font-size: 22px
+		color: $grey
+		margin: 0
+		font-family: $font-light
+
+	.triangle
+		margin: 0 auto
+		content: ""
+		display: block
+		width: 0
+		height: 0
+		border-width: 0 34px 34px 34px
+		border-color: transparent transparent $light-grey
+		border-style: solid
+		position: relative
+		top: 1px
+
+	.team-block
+		height: 373px
+		background: $light-grey
+		padding-top: 57px
+
+		.swiper-container
+			max-width: 1060px
+			height: 350px
+			margin: 0 auto
+			padding: 0 35px
+
+			.swiper-wrapper
+				text-align: center
+
+				.swiper-slide
+
+					.team-slide
+						margin: 0 auto
+						width: 300px
+						height: 300px
+
+						img
+							position: relative
+							top: 2px
+
+						.slide-info
+							display: -webkit-flex
+							display: -ms-flex
+							display: flex
+							justify-content: space-between
+							background: $prime-white
+							height: 74px
+							border-bottom: 3px solid $green
+							top: 1px
+
+							.slide-text
+								text-align: left
+								padding: 15px 20px 0
+
+								h3
+									font-family: $font-roboto
+									font-size: 18px
+									list-style: 18px
+									font-weight: 400
+									color: black
+
+								p
+									font-family: $font-light
+									font-size: 14px
+									padding-top: 8px
+
+							.slide-socials
+								padding: 20px
+
+								a
+									padding: 0 8px
+
+									i
+										color: $light-grey
+
+										&:hover
+											color: $light-blue
+
+			.swiper-pagination-bullet
+				height: 10px
+				width: 10px
+
+			.swiper-pagination-bullet-active
+				background: $green
+
+			.swiper-button-prev
+				background-image: url(../img/ArrowPrev.png)
+
+			.swiper-button-next
+				background-image: url(../img/ArrowNext.png)
+
+.portfolio

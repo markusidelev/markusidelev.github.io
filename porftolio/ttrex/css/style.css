@@ -56,10 +56,12 @@ body {
 }
 .welcome .w-logo {
   margin: 160px auto 0;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .welcome .w-logo:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .welcome .w-block {
   width: 720px;
@@ -100,25 +102,33 @@ header .menu {
   border-bottom: 1px solid #dfdfdf;
   border-top: 1px solid #dfdfdf;
   text-align: center;
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 header .menu .logo {
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   color: #578491;
   font-size: 30px;
   margin: 20px auto;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 header .menu .logo:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 header .menu nav {
   padding-top: 27px;
@@ -127,8 +137,9 @@ header .menu nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 header .menu nav ul li {
@@ -146,15 +157,17 @@ header .menu nav ul li a:hover {
   color: #578491;
 }
 header .menu .socials {
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-top: 28px;
   margin: 0 auto;
 }
 header .menu .socials a {
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   text-decoration: none;
   padding: 0 14px;
@@ -210,17 +223,22 @@ header .head-text .img {
   background: url("../img/background1.png") center top/cover no-repeat;
 }
 .about .about-block {
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 70px 0 70px;
 }
 .about .about-block .about-item {
   width: 240px;
   height: 240px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 10px auto 10px;
   box-sizing: border-box;
 }
@@ -256,10 +274,12 @@ header .head-text .img {
   color: #ffffff;
   font-style: 14px;
   margin: 10px auto 0;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .about .about-block .about-item .learn-button:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .numbers {
@@ -267,17 +287,22 @@ header .head-text .img {
   background: url("../img/numbers.jpg") center top/cover no-repeat;
 }
 .numbers .numbers-block {
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 auto;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .numbers .numbers-block .numbers-item {
   max-width: 210px;
   max-height: 70px;
   margin: 60px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .numbers .numbers-block .numbers-item .numbers-icon {
@@ -330,18 +355,21 @@ header .head-text .img {
   margin: 10px auto 0;
 }
 .clients .clients-block {
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 100px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .clients .clients-block .client {
   width: 250px;
   height: 62px;
   margin: 45px auto;
   display: inline-block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .services {
@@ -364,18 +392,25 @@ header .head-text .img {
   margin: 50px auto 0;
   padding: 15px;
   max-width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .services .services-block .service {
   width: 280px;
   height: 150px;
-  display: -webkit-flex;
   display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 40px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .services .services-block .service img {
   width: 62px;
@@ -409,7 +444,8 @@ header .head-text .img {
 
 .quote {
   display: block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   text-align: center;
   background: url("../img/background1.png") center top/cover no-repeat;
 }
@@ -417,7 +453,8 @@ header .head-text .img {
   max-width: 730px;
   margin: 0 auto;
   padding: 70px 30px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .quote .quote-block p {
   font-size: 21px;
@@ -466,6 +503,101 @@ header .head-text .img {
   font-size: 30px;
   font-weight: 800;
   color: #484848;
+}
+.team p {
+  font-size: 22px;
+  color: #979797;
+  margin: 0;
+  font-family: HelveticeLight;
+}
+.team .triangle {
+  margin: 0 auto;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-width: 0 34px 34px 34px;
+  border-color: transparent transparent #f0f0f0;
+  border-style: solid;
+  position: relative;
+  top: 1px;
+}
+.team .team-block {
+  height: 373px;
+  background: #f0f0f0;
+  padding-top: 57px;
+}
+.team .team-block .swiper-container {
+  max-width: 1060px;
+  height: 350px;
+  margin: 0 auto;
+  padding: 0 35px;
+}
+.team .team-block .swiper-container .swiper-wrapper {
+  text-align: center;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide img {
+  position: relative;
+  top: 2px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info {
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #ffffff;
+  height: 74px;
+  border-bottom: 3px solid #39a38f;
+  top: 1px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-text {
+  text-align: left;
+  padding: 15px 20px 0;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-text h3, .team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-text .numbers .numbers-block .numbers-item .numbers-info p, .numbers .numbers-block .numbers-item .numbers-info .team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-text p {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  list-style: 18px;
+  font-weight: 400;
+  color: black;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-text p {
+  font-family: HelveticeLight;
+  font-size: 14px;
+  padding-top: 8px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-socials {
+  padding: 20px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-socials a {
+  padding: 0 8px;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-socials a i {
+  color: #f0f0f0;
+}
+.team .team-block .swiper-container .swiper-wrapper .swiper-slide .team-slide .slide-info .slide-socials a i:hover {
+  color: #578491;
+}
+.team .team-block .swiper-container .swiper-pagination-bullet {
+  height: 10px;
+  width: 10px;
+}
+.team .team-block .swiper-container .swiper-pagination-bullet-active {
+  background: #39a38f;
+}
+.team .team-block .swiper-container .swiper-button-prev {
+  background-image: url(../img/ArrowPrev.png);
+}
+.team .team-block .swiper-container .swiper-button-next {
+  background-image: url(../img/ArrowNext.png);
 }
 
 /*# sourceMappingURL=style.css.map */
