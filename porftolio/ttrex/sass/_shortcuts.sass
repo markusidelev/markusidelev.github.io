@@ -1,0 +1,62 @@
+$font-light: HelveticeLight
+$font-regular: HelveticeRegular
+$font-bold: HelveticeBold
+$font-neue: HelveticaNeue
+$font-sans: 'Open Sans', sans-serif
+$font-roboto: 'Roboto Slab', serif
+
+
+$prime-white: #ffffff
+$border-white: #dfdfdf
+$light-blue: #578491
+$brown: #484848
+$grey: #979797
+$light-grey: #f0f0f0
+$green: #39a38f
+
+$back-one-url: "../img/background1.png"
+$back-two-url: "../img/background2.png"
+$back-three-url: "../img/background3.png"
+$back-four-url: "../img/background4.png"
+$back-number-url: "../img/numbers.jpg"
+$header-img-url: "../img/Header.jpg"
+$head-img-url: "../img/Head_img.jpg"
+$head-img-mini-url: "../img/Head_img_small.jpg"
+
+$bg-settings: center top/cover no-repeat
+=background-mix($url)
+  background: url($url) $bg-settings
+
+
+
+=media980
+  @media(max-width:980px)
+    @content
+
+=media850
+  @media(max-width:850px)
+    @content
+
+=media800
+  @media(max-width:800px)
+    @content
+
+=media750
+  @media(max-width:750px)
+    @content
+
+=media680
+  @media(max-width:680px)
+    @content
+
+=media580
+  @media(max-width:580px)
+    @content
+
+=media450
+  @media(max-width:450px)
+    @content
+
+=media320
+  @media(max-width:320px)
+    @content
