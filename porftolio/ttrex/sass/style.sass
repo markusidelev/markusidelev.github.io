@@ -33,12 +33,19 @@ body
 	min-height: 590px
 	margin: 0 auto
 	text-align: center
-
 	+background-mix($header-img-url)
+	+media580
+		background-position: left
+
+
 
 	.w-logo
 		margin: 160px auto 0
 		transition: .5s
+		+media320
+			margin-top: 100px
+			width: 250px
+
 		&:hover
 			transform: scale(1.1)
 
@@ -48,6 +55,12 @@ body
 		border: 5px solid $prime-white
 		margin: 55px auto 0
 		background: rgba(0,0,0,.4)
+		+media750
+			margin: 55px 20px 0
+			width: auto
+		+media680
+			width: auto
+			height: auto
 
 		%w-block-text
 			font-family: $font-roboto
@@ -70,9 +83,16 @@ body
 			font-size: 19px
 			margin: 0
 			padding-bottom: 10px
+			+media680
+				padding: 0 20px 20px
+				line-height: 25px
 
 	.arrows
 		margin: 75px auto 45px
+		+media580
+			margin: 50px auto 20px
+		+media320
+			margin: 30px auto 20px
 
 header
 	min-height: 735px
@@ -89,6 +109,9 @@ header
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
+		+media680
+			flex-direction: column
+			border: none
 
 		.logo
 			font-family: $font-sans
@@ -100,12 +123,16 @@ header
 			font-size: 30px
 			margin: 20px auto
 			transition: .5s
+			+media680
+				margin: 10px auto
 
 			&:hover
 				transform: scale(1.1)
 
 		nav
 			padding-top: 27px
+			+media680
+				padding: 0
 
 			ul
 				list-style: none
@@ -114,9 +141,13 @@ header
 				display: -webkit-flex
 				display: -ms-flex
 				display: flex
+				+media680
+					flex-direction: column
 
 				li
 					margin: 0 20px
+					+media680
+						border-bottom: 3px $border-white solid
 
 					a
 						text-decoration: none
@@ -125,6 +156,14 @@ header
 						font-size: 14px
 						color: $brown
 						line-height: 20px
+						+media680
+							font-size: 20px
+							line-height: 30px
+							display: block
+							width: 100%
+
+							&:hover
+								border-bottom: 3px solid $light-blue
 
 						&:hover
 							color: $light-blue
@@ -134,6 +173,8 @@ header
 			display: flex
 			padding-top: 28px
 			margin: 0 auto
+			+media800
+				display: none
 
 			a
 				display: -webkit-flex
@@ -184,6 +225,10 @@ header
 			margin: 30px auto 0
 			+background-mix($head-img-url)
 			overflow: hidden
+			+media980
+				width: 100%
+				+background-mix($head-img-mini-url)
+				max-height: 365px
 
 .about
 	text-align: center
@@ -259,6 +304,8 @@ header
 			max-height: 70px
 			margin: 60px auto
 			display: flex
+			+media850
+				transform: scale(0.7)
 
 			.numbers-icon
 				float: left
@@ -436,7 +483,7 @@ header
 		.line
 			background: $prime-white
 
-		span
+
 		p
 			font-size: 18px
 			color: $prime-white
@@ -547,3 +594,416 @@ header
 				background-image: url(../img/ArrowNext.png)
 
 .portfolio
+	text-align: center
+
+	h2
+		margin: 0 auto
+		padding: 75px 0 10px
+		font-family: $font-roboto
+		font-size: 30px
+		font-weight: 800
+		color: $brown
+
+	p
+		font-size: 22px
+		color: $grey
+		margin: 0
+		font-family: $font-light
+
+	.portfolio-categories
+		max-width: 450px
+		margin: 0 auto
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: space-between
+		+media450
+			flex-direction: column
+
+
+		a
+			text-decoration: none
+			text-transform: uppercase
+			font-family: $font-neue
+			font-size: 11px
+			color: $grey
+			padding: 5px 10px
+			box-sizing: border-box
+			border: 3px solid transparent
+
+			&:hover
+				border: 3px solid $green
+				color: $green
+
+	.portfolio-block
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		margin: 25px auto 50px
+		flex-wrap: wrap
+		justify-content: space-around
+		max-width: 1000px
+
+		.portfolio-item
+			width: 217px
+			height: 217px
+			position: relative
+			overflow: hidden
+			margin: 14px
+
+			img
+				display: block
+				width: 217px
+				height: 217px
+
+			.portfolio-overlay
+				display: block
+				width: 217px
+				height: 217px
+				text-align: center
+				background: rgba(73, 82, 89, 0.7)
+				position: absolute
+				bottom: -217px
+				font-size: 58px
+				font-weight: 100
+				font-family: $font-light
+				overflow: hidden
+				transition: 0.5s
+
+				a
+					top: 70px
+					text-decoration: none
+					color: $prime-white
+					position: relative
+
+			&:hover .portfolio-overlay
+				bottom: 0px
+				z-index: 10
+
+.video-section
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	justify-content: space-around
+	flex-wrap: wrap
+	+background-mix($back-one-url)
+	padding: 50px 50px
+
+	.video-section-text
+		width: 380px
+		min-height: 260px
+		color: $prime-white
+		+media980
+			margin-bottom: 30px
+
+		h3
+			font-family: $font-roboto
+			font-weight: 300
+			font-size: 24px
+			text-transform: uppercase
+
+		.line
+			margin: 5px 0 25px
+
+		p
+			font-family: $font-regular
+			font-size: 12px
+			line-height: 18px
+			font-weight: 100
+			color: $light-grey
+			margin-bottom: 30px
+
+		a.visit-button
+			margin: 20px 0 20px
+			text-transform: uppercase
+			color: $prime-white
+			font-family: $font-regular
+			font-size: 14px
+			font-weight: 900
+			border: 2px solid $prime-white
+			padding: 10px 25px
+			line-height: 14px
+			letter-spacing: 1px
+			transition: 0.5s
+
+			&:hover
+				box-shadow: 0px 0px 0px 3px $prime-white
+
+.twitter-section
+	+background-mix($back-two-url)
+	height: 243px
+	text-align: center
+	padding-top: 60px
+	padding-left: 9%
+	padding-right: 9%
+	position: relative
+	box-sizing: border-box
+	color: $prime-white
+	+media580
+		padding-top: 40px
+
+	i
+		position: absolute
+		font-size: 65px
+		top: 40px
+		+media580
+			top: 20px
+
+	h3
+		font-family: $font-roboto
+		font-weight: 100
+		text-transform: uppercase
+		font-size: 24px
+		text-align: left
+
+	.line
+		text-align: left
+		margin: 5px 0 30px
+		background-color: $prime-white
+
+	p
+		font-size: 22px
+		font-family: $font-light
+		font-weight: 100
+		text-align: left
+
+		a
+			font-weight: 900
+			font-family: $font-bold
+			text-decoration: none
+			color: $prime-white
+
+.contact
+	text-align: center
+
+	h2
+		margin: 0 auto
+		padding: 75px 0 10px
+		font-family: $font-roboto
+		font-size: 30px
+		font-weight: 800
+		color: $brown
+
+	p
+		font-size: 22px
+		color: $grey
+		margin: 0
+		font-family: $font-light
+
+	.ocean
+		overflow: hidden
+		height: 459px
+		+background-mix($back-three-url)
+
+		.ocean-logo
+			width: 170px
+			height: 66px
+			background: $prime-white
+			margin: 145px auto 0
+
+			&::after
+				margin: 0 auto
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 14px 13.5px 0 13.5px
+				border-color: $prime-white transparent transparent transparent
+				position: relative
+
+			h3
+				font-family: $font-sans
+				font-weight: 800
+				text-decoration: none
+				text-transform: uppercase
+				display: inline-block
+				color: $light-blue
+				font-style: 30px
+				line-height: 66px
+				transition: .5s
+
+	.form-block
+		position: relative
+		+background-mix($back-four-url)
+		min-height: 600px
+		text-align: left
+
+		.form-box
+			position: absolute
+			margin: 0 auto
+			min-height: 660px
+			max-width: 940px
+			background: $prime-white
+			bottom: 50px
+			margin-left: auto
+			margin-right: auto
+			left: 0
+			right: 0
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			padding: 0 20px
+
+			form
+				position: relative
+				display: -webkit-flex
+				display: -ms-flex
+				display: flex
+				flex-direction: column
+				width: 540px
+				margin: 20px auto
+				min-height: 620px
+
+				label
+					font-family: $font-regular
+					font-size: 14px
+					line-height: 35px
+					font-weight: 100
+					color: $brown
+
+					span
+						left: 85%
+						font-size: 12px
+						position: absolute
+						color: $green
+						+media450
+							left: 80%
+
+				input
+					width: 95%
+					height: 45px
+					border: 1px solid $light-grey
+					border-radius: 3px
+					margin-bottom: 10px
+					outline: none
+					padding-left: 10px
+
+					&:focus
+						border: 1px solid $green
+						outline: none
+
+					&[type="submit"]
+						color: $prime-white
+						width: 90px
+						height: 45px
+						background: $green
+						border: 0 transparent solid
+						transition: 1s
+						margin-top: 20px
+						padding: 0
+
+
+						&:hover
+							transform: scale(1.1)
+
+				#message-form
+					padding: 10px
+					width: 95
+					border: 1px solid $light-grey
+					border-radius: 3px
+					margin-bottom: 10px
+					outline: none
+					padding-left: 20px
+					height: 200px
+					resize: none
+
+			.contact-info
+				margin: 45px
+				width: 270px
+
+				h3
+					font-family: $font-sans
+					font-style: 23px
+					margin-bottom: 30px
+
+				p
+					font-family: $font-regular
+					font-size: 14px
+					margin-bottom: 25px
+
+				.contact-info-block
+					background: none
+
+					.contact-info-block-box
+						display: -webkit-flex
+						display: -ms-flex
+						display: flex
+						margin: 22px auto
+
+						img
+							width: 42px
+							height: 60px
+
+						.contact-info-block-text
+							display: -webkit-flex
+							display: -ms-flex
+							display: flex
+							flex-direction: column
+							margin: 10px 20px
+							text-align: left
+
+							p
+								margin: 0
+								font-family: $font-light
+								font-size: 18px
+								color: black
+
+							a
+								margin: 0
+								font-family: $font-light
+								font-size: 18px
+								color: black
+
+footer
+	background-color: $green
+	overflow: hidden
+
+	.footer-wrapper
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		justify-content: space-between
+		margin: 50px 130px
+		+media580
+			width: 150px
+			flex-direction: column-reverse
+			margin: 30px auto
+			text-align: center
+
+		.author
+			text-align: center
+
+			a
+				text-decoration: none
+				color: $prime-white
+				font-family: $font-neue
+				font-size: 14px
+				letter-spacing: 0.5px
+
+			p
+				font-weight: 900
+				display: inline-block
+				margin: 0 auto
+
+		.up-arrow
+			margin: 0 30px
+			+media580
+				margin: 20px auto
+
+
+		.social-mini
+			width: 100px
+			font-size: 14px
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			justify-content: space-between
+			+media580
+				margin: 0 auto
+
+
+			a
+				color: $prime-white
