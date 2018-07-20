@@ -1,0 +1,621 @@
+<!--
+
+  - первым ходит всегда крестик
+  - ход крестика отображается добавлением к ячейке field класса cross, нолика - класса toes
+
+  При окончании игры:
+  - ".game_title" и ".game_btn" теряют класс "hidden"
+  - ".game_title" показывает сообщение "Победа крестиков!", "Победа ноликов!" или "Ничья"
+  - "#restart" начинает новую игру не перегружая страницу
+  - "Выигрышные" ячейки получают класс win и, в зависимости от направления - класс vertical, horizontal, diagonal-right или diagonal-left
+
+  Незавершённая игра должна быть сохранена для продолжения.
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TicTacToe</title>
+    <style>
+    * {
+        margin: 20;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        background-color: rgba(100, 204, 151, .37);
+        display: flex;
+        font-family: Arial;
+    }
+
+    .hidden {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .game {
+        margin: auto;
+    }
+
+    .field {
+        width: 5em;
+        height: 5em;
+        border: 1px solid;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .game_area {
+        width: calc(15em + 30px);
+        display: flex;
+        flex-flow: wrap;
+        background-color: #fff;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .game_btn {
+        width: 15em;
+        height: 50px;
+        line-height: 50px;
+        background-color: #668ecaba;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        letter-spacing: 2px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .game_title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color: #6b75a7;
+        background-color: #f0d8f0;
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .field:after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-size: 4rem;
+        text-align: center;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    .field.cross:after {
+        content: 'x';
+        color: #c32f2f;
+    }
+
+    .field.toes:after {
+        content: 'o';
+        color: #44bcd0;
+    }
+
+    .field.win:before {
+        content: '';
+        top: 50%;
+        height: 0px;
+        display: block;
+        position: absolute;
+        border: 2px solid #191970;
+        z-index: 1;
+    }
+
+    .field.win.horizontal:before {
+        left: -5%;
+        width: 110%;
+    }
+
+    .field.win.vertical:before {
+        left: -5%;
+        width: 110%;
+        transform: rotate(90deg);
+    }
+
+    .diagonal-right:before {
+        left: -25%;
+        width: 150%;
+        transform: rotate(45deg);
+    }
+
+    .diagonal-left:before {
+        left: -25%;
+        width: 150%;
+        transform: rotate(-45deg);
+    }
+    
+    </style>
+	<link rel="stylesheet" href="../../css/pushy-buttons.css">
+</head>
+
+<body>
+    
+    <div class="game">
+        <div class="game_title hidden"></div>
+        <div class="game_area">
+            <div class="field" id="f-1" data-id="1"></div>
+            <div class="field" id="f-2" data-id="2"></div>
+            <div class="field" id="f-3" data-id="3"></div>
+            <div class="field" id="f-4" data-id="4"></div>
+            <div class="field" id="f-5" data-id="5"></div>
+            <div class="field" id="f-6" data-id="6"></div>
+            <div class="field" id="f-7" data-id="7"></div>
+            <div class="field" id="f-8" data-id="8"></div>
+            <div class="field" id="f-9" data-id="9"></div>
+        </div>
+        <div class="game_btn hidden" id="restart">Начать заново</div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+        var game = document.querySelector('.game');
+        var field = document.querySelectorAll('.field');
+        var title = document.querySelector('.game_title');
+        var restartBtn = document.getElementById('restart');        
+        var count = 0; // счетчик
+        var wonChecker = 0; // индикатор победы ( 0 - победа не зарегистрирована, 1 - победили крестики, 2 - нолики, 3 - ничья.) 
+        // используется для сохранения и загрузки состояния игры (номер индикатора сохраняется в локальную память и выгружается при перезагрузке игры.) 
+        // нужен для избежания такой ситуации: партия завершилась победой/ничьей (появляется кнопка "начать заново"), игрок перезагружает страницу и кнопка перезагрузки не появляется
+
+        
+
+        // функция отображения нажатий (крести или нолик) и запуска фунцкий проверки и сохранения состояния игры
+        var showPress = function() {
+
+            block = this.getAttribute('data-id');
+
+            if (this.className != 'field') {
+                return alert('выберите другую область');
+
+            } else if (count % 2 == 0) {
+                this.className = 'field cross';
+
+            } else if (count % 2 != 0) {
+                this.className = 'field toes';
+            };
+            count++
+            winOrNot();
+            gameSaver();
+            
+        };
+
+        // фунция сохранения состояния игры
+        var gameSaver = function(){
+            var gameSave = [];
+            // var jsave = '';
+
+            for (var i = 0; i < field.length; i++) {
+
+                var fieldSave = field[i].className;
+                gameSave.push(fieldSave);
+
+            }; // сохраняет классы всех ячеек в массив
+
+            gameSave.push(count); // сохраняет счетчик для правильной работы очередности (крестики/нолики)
+            gameSave.push(wonChecker); // сохраняет состояние победы
+
+            return localStorage.setItem('game', JSON.stringify(gameSave));
+            
+        }; 
+
+
+    // функция загрузки состояния игры
+    var gameLoader = function() {
+        if (localStorage.getItem('game') !== null) {
+            var loadGame = JSON.parse(localStorage.game);
+
+            for (var i = 0; i < field.length; i++) {
+                field[i].className = loadGame[i];
+            };
+            count = loadGame[9];
+                wonChecker = loadGame[10]; //выгружает состояние победы и отображает кнопку перезагрузки игры и правильный тайтл победы/ничьи
+                if (loadGame[10] == 1){
+                    restartBtn.className = 'game_btn'; 
+                    title.innerHTML = 'Победа крестиков!'
+                    title.className = 'game_title';
+                };
+
+                if (loadGame[10] == 2){
+                    restartBtn.className = 'game_btn'; 
+                    title.innerHTML = 'Победа ноликов!';
+                    title.className = 'game_title';
+                };
+
+                if (loadGame[10] == 3) {
+                    restartBtn.className = 'game_btn';
+                    title.innerHTML = 'Ничья';
+                    title.className = 'game_title';
+                };
+
+
+            } else {};
+        };
+
+
+
+//////////////////////////////////////////////////////////// очень некрасивая, но работающая функция функция проверки условий победы.
+
+
+var winOrNot = function (){
+
+            //ничья
+            if (count == 9) {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';                
+                title.innerHTML = 'Ничья';
+
+
+                wonChecker = 3;
+            };
+
+            //крестики
+            //горизонтальные
+            if (field[0].className=='field cross' && field[1].className=='field cross'&& field[2].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[0].className = 'field cross win horizontal';
+                field[1].className = 'field cross win horizontal';
+                field[2].className = 'field cross win horizontal';
+
+
+                wonChecker = 1;
+            };
+
+            if (field[3].className=='field cross' && field[4].className=='field cross'&& field[5].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[3].className = 'field cross win horizontal';
+                field[4].className = 'field cross win horizontal';
+                field[5].className = 'field cross win horizontal';
+
+
+                wonChecker = 1;
+            };
+            if (field[6].className=='field cross' && field[7].className=='field cross'&& field[8].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[6].className = 'field cross win horizontal';
+                field[7].className = 'field cross win horizontal';
+                field[8].className = 'field cross win horizontal';
+
+
+                wonChecker = 1;
+            };
+
+
+
+            // вертикальные
+            if (field[0].className=='field cross' && field[3].className=='field cross'&& field[6].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[0].className = 'field cross win vertical';
+                field[3].className = 'field cross win vertical';
+                field[6].className = 'field cross win vertical';
+
+
+                wonChecker = 1;
+            };
+            if (field[1].className=='field cross' && field[4].className=='field cross'&& field[7].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[1].className = 'field cross win vertical';
+                field[4].className = 'field cross win vertical';
+                field[7].className = 'field cross win vertical';
+
+
+                wonChecker = 1;
+            };
+            if (field[2].className=='field cross' && field[5].className=='field cross'&& field[8].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[2].className = 'field cross win vertical';
+                field[5].className = 'field cross win vertical';
+                field[8].className = 'field cross win vertical';
+
+
+                wonChecker = 1;
+            };
+
+
+
+            // диагональные
+            if (field[0].className=='field cross' && field[4].className=='field cross'&& field[8].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[0].className = 'field cross win diagonal-right';
+                field[4].className = 'field cross win diagonal-right';
+                field[8].className = 'field cross win diagonal-right';
+
+
+                wonChecker = 1;
+            };
+            if (field[2].className=='field cross' && field[4].className=='field cross'&& field[6].className=='field cross') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа крестиков!';
+
+                field[2].className = 'field cross win diagonal-left';
+                field[4].className = 'field cross win diagonal-left';
+                field[6].className = 'field cross win diagonal-left';
+
+
+                wonChecker = 1;
+            };
+
+
+
+
+
+
+            //нолики
+            //горизонтальные
+            if (field[0].className=='field toes' && field[1].className=='field toes'&& field[2].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[0].className = 'field toes win horizontal';
+                field[1].className = 'field toes win horizontal';
+                field[2].className = 'field toes win horizontal';
+
+
+                wonChecker = 2;
+            };
+
+            if (field[3].className=='field toes' && field[4].className=='field toes'&& field[5].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[3].className = 'field toes win horizontal';
+                field[4].className = 'field toes win horizontal';
+                field[5].className = 'field toes win horizontal';
+
+
+                wonChecker = 2;
+            };
+            if (field[6].className=='field toes' && field[7].className=='field toes'&& field[8].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[6].className = 'field toes win horizontal';
+                field[7].className = 'field toes win horizontal';
+                field[8].className = 'field toes win horizontal';
+
+
+                wonChecker = 2;
+            };
+
+
+
+            // вертикальные
+            if (field[0].className=='field toes' && field[3].className=='field toes'&& field[6].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[0].className = 'field toes win vertical';
+                field[3].className = 'field toes win vertical';
+                field[6].className = 'field toes win vertical';
+
+
+                wonChecker = 2;
+            };
+            if (field[1].className=='field toes' && field[4].className=='field toes'&& field[7].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[1].className = 'field toes win vertical';
+                field[4].className = 'field toes win vertical';
+                field[7].className = 'field toes win vertical';
+
+
+                wonChecker = 2;
+            };
+            if (field[2].className=='field toes' && field[5].className=='field toes'&& field[8].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[2].className = 'field toes win vertical';
+                field[5].className = 'field toes win vertical';
+                field[8].className = 'field toes win vertical';
+
+
+                wonChecker = 2;
+            };
+
+
+
+            // диагональные
+            if (field[0].className=='field toes' && field[4].className=='field toes'&& field[8].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[0].className = 'field toes win diagonal-right';
+                field[4].className = 'field toes win diagonal-right';
+                field[8].className = 'field toes win diagonal-right';
+
+
+                wonChecker = 2;
+            };
+            if (field[2].className=='field toes' && field[4].className=='field toes'&& field[6].className=='field toes') {
+                title.className = 'game_title';
+                restartBtn.className = 'game_btn';
+                title.innerHTML = 'Победа ноликов!';
+
+                field[2].className = 'field toes win diagonal-left';
+                field[4].className = 'field toes win diagonal-left';
+                field[6].className = 'field toes win diagonal-left';
+
+
+                wonChecker = 2;
+            };
+        };
+
+
+        gameLoader(); // загрузка игры
+
+        // ловим нажатия на игровое поле
+        for (var i = 0, l = field.length; i < l; i++) {
+
+            field[i].onclick = showPress;
+        };
+
+
+        // кнопка рестарта
+        restartBtn.onclick = function (){
+            for (var i = 0; i < field.length; i++) {
+                field[i].className = 'field';
+            };
+
+            title.className = 'game_btn hidden'
+            title.innerHTML = '';
+            restartBtn.className = 'game_btn hidden';
+            count = 0;
+            localStorage.removeItem('game'); // удаляет сохранение при рестарте игры
+            wonChecker = 0; // обнуляем состояние победы
+
+        };
+
+
+
+       /* gameJSON = {
+            field1: 'field',
+            field2: 'field',
+            field3: 'field',
+            field4: 'field',
+            field5: 'field',
+            field6: 'field',
+            field7: 'field',
+            field8: 'field',
+            field9: 'field',
+        };*/
+
+
+
+
+        ///////////////////////////////////////////////////////////////// более красивые и неработающие варианты
+
+        // 
+         // сверяем массив нажатий с условиями победы
+
+            /*
+            var winOrNot = function(array) {
+                for (var i = 0; i < win.length; i++) {
+                    var winNumb = win[i];
+
+                    for (var l = 0; l < winNumb.length; l++) {
+
+                        for (var j = 0; j < array.length; j++) {
+
+                            if (winNumb[l] == array[j]) {
+                                console.log('break');
+                                break;
+
+                            };
+                            if (j === array.length - 1) {
+                                console.log('false');
+                                return false;
+                            };
+                        };
+                    }; console.log('true'); 
+                    return true;
+                };
+            };
+            */
+
+
+           /*
+            var winOrNot = function(array) {
+                // debugger
+                for (var i = 0; i < win.length; i++) {
+                    var winNumb = win[i];
+                    contains(array, winNumb);
+                }
+            };
+
+
+            var contains = function(array, winNumb) {
+                // debugger
+                for(var j = 0; j < winNumb.length; j++){
+                    if(array.indexOf(winNumb[j]) == -1) {
+                        return false;
+                    }else {
+                        return true;
+                    }
+                } 
+            };
+            */
+            /*     
+
+
+
+        for (var i = 0, l = field.length; i < l; i++) {
+            field[i].onclick = showPress;
+        } // ловим нажатия
+
+    
+
+        var win = [
+            [1, 2, 3], 
+            [4, 5, 6],
+            [7, 8, 9],
+            //вертикальные
+            [1, 4, 7],
+            [2, 5, 6],
+            [3, 6, 9],
+            //диагональные
+            [1, 5, 9],
+            [3, 5, 7]
+            ]
+            */
+            
+        </script>
+        <a href="../../">     
+			<button  class="btn btn--sm btn--red back_to_main">BACK TO MAIN PAGE</button>
+		</a>
+    </body>
+
+    </html>
