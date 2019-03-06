@@ -1,3 +1,52 @@
-a{
-	color: black;
-}
+* {
+  font-family: "Open Sans"; }
+
+a {
+  text-decoration: none; }
+
+header {
+  height: 450px;
+  background: url(../img/bg_img1.jpeg) center bottom;
+  background-size: cover; }
+  header .logo {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 10px 0 0 30px; }
+    header .logo path {
+      fill: rgba(0, 0, 0, 0.7); }
+  header nav {
+    float: right;
+    margin: 30px 30px 0 0; }
+    header nav a {
+      display: inline-block;
+      margin-left: 20px;
+      color: rgba(0, 0, 0, 0.7);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase; }
+      header nav a:hover {
+        color: black; }
+  header h1 {
+    text-align: center;
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    margin-bottom: 20px;
+    clear: both;
+    padding-top: 100px; }
+    header h1 span {
+      display: inline-block;
+      padding: 10px 10px;
+      border: white solid 10px; }
+  header .tagline {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: white;
+    line-height: 1; }
+
+/*# sourceMappingURL=style.css.map */
