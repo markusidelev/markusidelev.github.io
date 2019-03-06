@@ -1,1 +1,1 @@
-<!-- <?php include __DIR__ . "/header.view.php" ?> -->
+<?php include __DIR__ . "\header.view.php" ?>
