@@ -7,6 +7,12 @@ body {
   max-width: 600px;
   margin: 0 auto;
   color: #111111; }
+  body ::-moz-selection {
+    background: #FF4136;
+    color: #111111; }
+  body ::selection {
+    background: #FF4136;
+    color: #111111; }
   body h1,
   body h2,
   body h3,
