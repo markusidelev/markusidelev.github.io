@@ -1,0 +1,69 @@
+.portfolio
+    background-color: $portfolio_color
+    color: $alt_black
+    min-height: 1425px
+
+    .container
+        .section_info
+            margin-bottom: 30px
+
+
+        .portfolio-btn_row
+            margin: 30px auto
+
+            @media (max-width: 480px)
+                width: 300px
+                
+            a
+                color: $black
+                width: 85px
+                height: 38px
+                display: inline-block
+                background-color: $light-shadow
+                // border: 1px tranparent white
+                border-radius: 3px
+                text-transform: uppercase
+                text-align: center
+                padding-top: 8px
+                margin: 0 5px
+                font-size: 18px
+                &:hover
+                    background-color: $shadow
+                &.active_btn
+                    background-color: white
+                    &:hover
+                        background-color: darken(white, 10%)
+
+                @media (max-width: 480px)
+                    margin: 10px
+
+        .portfolio_block
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            
+            .portfolio_item
+                margin: 30px auto
+                h4
+                    margin-top: 30px
+                img    
+                    width: 100%
+                    transition: 5s
+                &:hover
+                    img
+                        transform: scale(1.05)
+
+        .big_btn
+                @include big_btn($green, $dark-green) 
+                margin-top: 40px
+
+// @media (max-width: 1025px)
+
+// @media (max-width: 768px)
+    
+// @media (max-width: 480px)
+//     .container
+//         .portfolio-btn_row 
+//             a
+//                 margin: 10px                .
+// @media (max-width: 375px)

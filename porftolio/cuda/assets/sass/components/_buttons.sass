@@ -1,0 +1,20 @@
+@mixin big_btn($main, $dark)
+    color: #fff
+    text-transform: uppercase
+    display: block
+    width: 300px
+    height: 72px
+    // box-shadow: 0 6px
+    border-radius: 8px
+    margin: 0 auto
+    @include semi-bold
+    font-size: 18px
+    padding-top: 26px
+    box-shadow: 0 6px $dark
+    background-color: $main
+    &:hover
+        background-color: lighten($main, 4%)
+    &:active
+        transform: translateY(3px)
+        box-shadow: 0 3px $dark
+

@@ -1,0 +1,110 @@
+$default-size: 160px;
+$label-font-size: $default-size / 4;
+$label-font-size-redo: $default-size * 4;
+
+// -- mixins
+@mixin size($width, $height) {
+    height: $height;
+    width: $width;
+}
+
+@mixin draw-progress($progress, $color) {
+    .skill_bar {
+        .half-circle {
+            border-color: $color;
+        }
+
+        .left-side {
+            transform: rotate($progress * 3.6deg);
+        }
+
+        @if $progress <=50 {
+            .right-side {
+                display: none;
+            }
+        }
+
+        @else {
+            clip: rect(auto, auto, auto, auto);
+
+            .right-side {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+
+
+// -- selectors
+
+
+// .skill_item {
+//     @include size($default-size, $default-size);
+
+//     margin: 15px;
+//     position: relative;
+
+//     span {
+//         @include light;
+//         font-size: 50px;
+//     }
+
+//     //
+//     .skill_bar {
+//         @include size(100%, 100%);
+//         clip: rect(0, $default-size, $default-size, $default-size / 2);
+//         left: 0;
+//         position: absolute;
+//         top: 0;
+
+//         .half-circle {
+//             @include size(100%, 100%);
+//             border: ($default-size / 10) solid $light-blue;
+//             border-radius: 50%;
+//             clip: rect(0, $default-size / 2, $default-size, 0);
+//             left: 0;
+//             position: absolute;
+//             top: 0;
+//         }
+//     }
+
+//     .label {
+
+//         border-radius: 50%;
+//         text-align: center;
+//         color: $black;
+//         // cursor: default;
+//         display: block;
+//         top: 50px;
+//         left: 50px;
+//         position: absolute;
+//         text-align: center;
+
+//         .smaller {
+//             font-size: 32px;
+//         }
+//     }
+
+//     .shadow {
+//         @include size(100%, 100%);
+//         border: $default-size / 10 solid #bdc3c7;
+//         border-radius: 50%;
+//     }
+
+//     &.progress-90 {
+//         @include draw-progress(90, $light-blue);
+//     }
+
+//     &.progress-75 {
+//         @include draw-progress(75, #9b59b6);
+//     }
+
+//     &.progress-70 {
+//         @include draw-progress(70, #e67e22);
+//     }
+
+//     &.progress-85 {
+//         @include draw-progress(85, #1abc9c);
+//     }
+// }

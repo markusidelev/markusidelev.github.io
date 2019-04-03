@@ -1,0 +1,74 @@
+.message
+    background-color: $message_color
+    min-height: 820px
+    color: white
+
+    .container
+
+        .section_info
+            margin: 0 auto 50px
+            a
+                color: white
+
+            @media (max-width: 480px)
+                max-width: 30ch
+
+        form
+            max-width: 865px
+            margin: 0 auto
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+
+            input
+                &[type="text"],
+                &[type="email"]
+                    margin: 15px 0
+                    width: 415px
+                    height: 56px
+                    border: none
+                    border-radius: 3px
+                    background: $dark-blue
+                    padding: 0 25px
+                    color: white
+                    text-align: left
+                    @include placeholder
+                        color: white
+                        text-align: left
+                        +regular
+                        font-size: 18px
+
+                    @media (max-width: 768px)
+                        width: 100%
+            input
+                &[type="submit"]                    
+                    +big_btn ($light-blue, $blue)
+                    padding-top: 0
+                    border: none
+                    margin-top: 45px
+                    height: 70px
+                    
+            textarea
+                margin: 15px 0
+                width: 100%
+                min-height: 200px
+                background: $dark-blue
+                padding: 15px 25px
+                border: none
+                border-radius: 3px
+                color: white
+                text-align: left
+
+                @include placeholder
+                    color: white
+                    text-align: left
+                    +regular
+                    font-size: 18px
+
+// @media (max-width: 1025px)
+
+// @media (max-width: 768px)
+    
+// @media (max-width: 480px)
+    
+// @media (max-width: 375px)

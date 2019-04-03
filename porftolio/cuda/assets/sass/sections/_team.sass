@@ -1,0 +1,64 @@
+.team
+    background-color: #e7f1f8
+    min-height: 915px
+    color: $black
+
+
+    .container
+        .team_block
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            
+            @media (max-width: 1025px)
+                justify-content: center
+
+            .team_item
+                height: 540px
+                width: 260px
+
+                .team-img_block
+                    border: 3px solid $light-shadow
+                    width: 200px
+                    height: 200px
+                    background-color: $light-shadow
+                    border-radius: 50%
+                    margin: 15px auto 20px
+                    transition: 1s
+                    overflow: hidden
+
+                    img
+                        width: 200px
+                        height: 200px
+                        
+                h3
+                    margin: 35px auto 5px
+
+                .team_item-info
+                    @include regular
+                    color: $light-blue
+                    margin: 0 auto
+                p
+                    width: 200px
+                    margin: 20px auto 30px
+                &:hover
+                    .team-img_block
+                        transform: scale(1.05)
+
+                .team_item-share_row
+                    margin: 0 auto                    
+                    a
+                        margin: 0 3px
+                        img
+                            border: 2px solid transparent
+                            border-radius: 50%
+                            &:hover
+                                border: 2px solid $light-shadow  
+
+// @media (max-width: 1025px)
+
+// @media (max-width: 768px)
+    
+// @media (max-width: 480px)
+    
+// @media (max-width: 375px)

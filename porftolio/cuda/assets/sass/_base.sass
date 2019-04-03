@@ -1,0 +1,83 @@
+*,
+*:before,
+*:after 
+    margin: 0
+    padding: 0
+    outline: none
+    text-decoration: none
+    box-sizing: border-box
+    +regular
+    text-align: center
+    
+.container
+    max-width: 1140px
+    margin: 0 auto
+    padding-bottom: 40px
+
+    @media (max-width: 1025px)
+        width: 90%
+
+    h1
+        +bold
+        font-size: 42px
+        margin: 80px auto
+        @media (max-width: 480px)
+            font-size: 30px
+
+    h2
+        +bold
+        font-size: 42px
+        text-transform: uppercase
+        letter-spacing: 3px
+        padding-top: 110px
+
+    h3
+        +bold
+        font-size: 24px
+        text-transform: uppercase
+        margin: 15px auto
+
+    h4
+        +regular
+        font-size: 18px
+        text-transform: uppercase
+        // margin: 30px
+
+    p
+        +light
+        font-size: 16px
+        line-height: 24px
+
+    .section_info
+        +regular
+        font-size: 18px
+        line-height: 26px
+        margin-bottom: 60px
+
+    .line
+        margin: 20px auto
+        display: block
+        width: 85px
+        height: 3px
+        background-color: $shadow
+
+.author
+    background-color: $footer-color
+    a
+        p
+            +semi-bold
+            font-size: 24px
+            color: white
+            display: inline-block
+            padding: 25px 0 25px
+            margin: 0 auto
+
+
+
+// @media (max-width: 1025px)
+
+// @media (max-width: 768px)
+    
+// @media (max-width: 480px)
+    
+// @media (max-width: 320px)
