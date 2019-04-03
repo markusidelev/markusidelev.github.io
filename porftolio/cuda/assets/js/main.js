@@ -33,6 +33,6 @@ $(".big_btn").click(function(e)	{
 	$("html,body").animate({scrollTop:$(href).offset().top},1000);
 });
 
-$(".animated").hover(function(){
-	$(".animated").toggleClass("rubberBand infinite");
+$(".author .animated").hover(function(){
+	$(".author .animated").toggleClass("rubberBand infinite");
 });
