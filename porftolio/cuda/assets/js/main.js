@@ -12,8 +12,8 @@ function changeToCross(x) {
 	x.classList.toggle("change");
 };
 
-
-$("nav a").not(":first").click(function(e)	{
+// not(":first")
+$("nav a").click(function(e)	{
 	e.preventDefault();
 	$('nav').removeClass('open');
 	$('.nav-menu_btn').removeClass('change');

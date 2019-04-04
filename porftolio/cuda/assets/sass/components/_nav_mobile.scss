@@ -5,15 +5,22 @@
     right: 30px;
     cursor: pointer;
 	display: none;
+	transition: .5s;
 
 	@media (max-width: 768px) {
 		display: block
 	}
 	@media (max-width: 480px) {
 		transform: scale(0.7)
-	};
+	}
+	&.change {
+		top: 20px
+	}
 }
 
+.change .nav-menu_btn {
+	top: 30px
+}
 	.bar1,
 	.bar2,
 	.bar3 {
@@ -27,6 +34,7 @@
 	}
 
 	.change .bar1 {
+
 		-webkit-transform: rotate(-45deg) translate(-11px, 15px);
 		-ms-transform: rotate(-45deg) translate(-11px, 15x);
 		transform: rotate(-45deg) translate(-11px, 15px);

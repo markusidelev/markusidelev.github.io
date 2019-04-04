@@ -4,13 +4,19 @@
   top: 55px;
   right: 30px;
   cursor: pointer;
-  display: none; }
+  display: none;
+  transition: .5s; }
   @media (max-width: 768px) {
     .nav-menu_btn {
       display: block; } }
   @media (max-width: 480px) {
     .nav-menu_btn {
       transform: scale(0.7); } }
+  .nav-menu_btn.change {
+    top: 20px; }
+
+.change .nav-menu_btn {
+  top: 30px; }
 
 .bar1,
 .bar2,
