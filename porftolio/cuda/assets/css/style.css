@@ -187,7 +187,7 @@ header {
     header .container .big_btn:hover {
       background-color: #ed8a5d; }
     header .container .big_btn:active {
-      transform: translateY(3px);
+      transform: translateY(3px) !important;
       box-shadow: 0 3px #c86a40; }
 
 .services {
@@ -419,7 +419,7 @@ header {
     .portfolio .container .big_btn:hover {
       background-color: #19d4b3; }
     .portfolio .container .big_btn:active {
-      transform: translateY(3px);
+      transform: translateY(3px) !important;
       box-shadow: 0 3px #14a58c; }
 
 .feedback {
@@ -564,7 +564,7 @@ header {
       .message .container form input[type="submit"]:hover {
         background-color: #42c0e9; }
       .message .container form input[type="submit"]:active {
-        transform: translateY(3px);
+        transform: translateY(3px) !important;
         box-shadow: 0 3px #299ec5; }
     .message .container form textarea {
       margin: 15px 0;
