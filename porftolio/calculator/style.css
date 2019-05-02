@@ -4,7 +4,7 @@ body{
 	margin: 20px auto;
 	background: radial-gradient(circle, #fff 20%, #ccc);
 	background-size: cover;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif !important;
 
 }
 .container{
@@ -38,7 +38,6 @@ body{
 	height: 150px;
 	border: none;
 	text-align: right;
-	vertical-align: middle;
 	font-size: 50px;
 	color: white;
 	text-align: 100px;
@@ -154,12 +153,12 @@ body{
 
 }
 
-/*
+/* 
 
 .operaters-container .three {
 	background-color: #2f9416;
 }
-*/
+ */
 
 .author {
 	text-align: center;
