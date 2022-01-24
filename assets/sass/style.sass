@@ -1,19 +1,24 @@
+@import colors
+*
+    box-sizing: border-box
 html
     font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif
     font-size: 137.5%
     -webkit-font-smoothing: antialiased
 
+
 body
     padding: 10px
     max-width: 600px
     margin: 0 auto
-    color: #111111
+    color: $black
+    
     ::-moz-selection
-        background: #FF4136
-        color: #111111
+        background: $red
+        color: $black
     ::selection
-        background: #FF4136
-        color: #111111
+        background: $red
+        color: $black
 
     h1,
     h2,
@@ -27,9 +32,9 @@ body
         line-height: 1.5rem
 
     h1
-        font-size: 4.242rem
+        font-size: 4rem
         line-height: 4.5rem
-        margin-top: 2rem
+        margin-top: 0
 
     h2
         font-size: 2.828rem
@@ -49,7 +54,7 @@ body
         line-height: 1.3rem
         cursor: pointer
         &:hover
-            color: #ff4136
+            color: $red
 
     .portfolio_block
         a
@@ -58,3 +63,31 @@ body
     .contact_block
         a
             margin-right: 1.5rem
+
+.profile-container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    padding-right: 10%
+    height: 9rem
+    margin-top: 2rem
+    // border: 1px solid red
+
+@import gradient-border
+
+.profile_img__container
+   
+    // box-sizing: border-box
+  
+    // overflow: hidden
+    height: 85%
+
+    // border: 3px solid red
+
+
+#profile_image
+    height: 100%
+    border-radius: 50%
+    // border-radius: 50%
+
