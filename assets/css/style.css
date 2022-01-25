@@ -1,3 +1,105 @@
+body.darkmode {
+  color: #ffffff;
+  background: #181818;
+}
+body.darkmode ::-moz-selection {
+  background: #ff4136;
+  color: #181818;
+}
+body.darkmode ::selection {
+  background: #ff4136;
+  color: #181818;
+}
+body.darkmode h1,
+body.darkmode h2,
+body.darkmode h3,
+body.darkmode h4,
+body.darkmode h5,
+body.darkmode h6 {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+body.darkmode h1 {
+  font-size: 4rem;
+  line-height: 4.5rem;
+  margin-top: 0;
+}
+body.darkmode h2 {
+  font-size: 2.828rem;
+  line-height: 3rem;
+  margin-top: 2rem;
+}
+body.darkmode .tagline {
+  font-size: 1.6rem;
+  line-height: 1.3rem;
+}
+body.darkmode p {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+body.darkmode a {
+  color: #0074d9;
+  line-height: 1.3rem;
+  cursor: pointer;
+}
+body.darkmode a:hover {
+  color: #ff4136;
+}
+body.darkmode .portfolio_block a {
+  text-decoration: none;
+}
+body.darkmode .contact_block a {
+  margin-right: 1.5rem;
+}
+body.darkmode .profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10%;
+  height: 9rem;
+  margin-top: 2rem;
+}
+body.darkmode .gradient-border {
+  --borderWidth: 10px;
+  background: #1D1F20;
+  position: relative;
+  border-radius: 50%;
+}
+body.darkmode .gradient-border:after {
+  content: "";
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  border-radius: 50%;
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+body.darkmode .profile_img__container {
+  height: 90%;
+}
+body.darkmode #profile_image {
+  height: 100%;
+  border-radius: 50%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -12,15 +114,15 @@ body {
   padding: 10px;
   max-width: 600px;
   margin: 0 auto;
-  color: #111111;
+  color: #181818;
 }
 body ::-moz-selection {
   background: #ff4136;
-  color: #111111;
+  color: #181818;
 }
 body ::selection {
   background: #ff4136;
-  color: #111111;
+  color: #181818;
 }
 body h1,
 body h2,
