@@ -66,8 +66,7 @@ body .portfolio_block a {
 body .contact_block a {
   margin-right: 1.5rem;
 }
-
-.profile-container {
+body .profile-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,15 +74,13 @@ body .contact_block a {
   height: 9rem;
   margin-top: 2rem;
 }
-
-.gradient-border {
+body .gradient-border {
   --borderWidth: 10px;
   background: #1D1F20;
   position: relative;
   border-radius: 50%;
 }
-
-.gradient-border:after {
+body .gradient-border:after {
   content: "";
   position: absolute;
   top: calc(-1 * var(--borderWidth));
@@ -96,7 +93,6 @@ body .contact_block a {
   animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
 }
-
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -108,11 +104,10 @@ body .contact_block a {
     background-position: 0% 50%;
   }
 }
-.profile_img__container {
+body .profile_img__container {
   height: 90%;
 }
-
-#profile_image {
+body #profile_image {
   height: 100%;
   border-radius: 50%;
 }
