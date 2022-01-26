@@ -1,0 +1,86 @@
+$cloud: 0.9rem
+$button_size: 1.5rem
+$button_curcle: $button_size - 0.5rem
+
+
+
+.button_container 
+    height: $button_size
+    width: 125px
+    // border: 1px solid red
+    position: fixed
+    top: 5px
+    right: 5%
+    // z-index: 10
+    display: flex
+    justify-content: space-between
+
+    button
+        position: relative
+        cursor: pointer
+        width: 45%
+        border-radius: 500px
+        appearance: none
+
+.darkmode_button
+    background: $light_bg
+    border: 2px solid $light_bg_border
+
+.darkmode_button::before
+    content:''
+    position: absolute
+    // background-image: url('/sun-solid.svg')
+    // background-color: white
+    // background-size: 1rem 1rem
+    left: 4px
+    top: 50%
+    width: $button_curcle
+    height: $button_curcle
+    background-color: $sun_bg
+    border: 0.1rem solid $sun_bg_border
+    border-radius: 50%
+    transform: translateY(-50%)
+       
+.darkmode_button.active::before
+    left: auto
+    right: 4px
+
+
+.darkmode_button::after
+    content:''
+    position: absolute
+    background-image: url('/cloud-solid.svg')
+    
+    // background-color: white
+    background-size: $cloud $cloud
+    left: 1rem
+    top: 50%
+    width: $cloud
+    height: $cloud
+    // background-color: white
+    // border: 0.1rem solid black
+    border-radius: 50%
+    transform: translateY(-50%)
+
+.darkmode_button.active::after
+    // left: auto
+    // right: 4px
+    background-image: none
+
+
+    
+.automode_button
+    background: $white
+    border: 2px solid $grey
+
+
+
+body.darkmode
+
+    .darkmode_button
+        background: $dark_bg
+        border: 2px solid $dark_bg_border
+
+    .darkmode_button.active::before
+        background-color: $moon_bg
+        border: 0.1rem solid $moon_bg_border

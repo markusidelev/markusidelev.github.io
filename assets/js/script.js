@@ -13,11 +13,13 @@ let saveTheme = (theme) => localStorage.setItem('styleTheme', theme)
 
 let turnDark = (theme) => {
   body.classList.add('darkmode')
+  btn.classList.add('active')
   saveTheme(theme)
 }
 
 let turnLight = (theme) => {
   body.classList.remove('darkmode')
+  btn.classList.remove('active')
   saveTheme(theme)
 }
 
@@ -55,6 +57,7 @@ checkLocalTheme()
 btn.addEventListener('click', function() {
   if (body.classList.contains('darkmode')) {
     turnLight('lightmode')
+    
    
   } else {
     turnDark('darkmode')
