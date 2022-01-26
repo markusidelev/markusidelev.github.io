@@ -21,6 +21,8 @@ $button_curcle: $button_size - 0.5rem
         width: 45%
         border-radius: 500px
         appearance: none
+        transition: 1s
+
 
 .darkmode_button
     background: $light_bg
@@ -49,7 +51,7 @@ $button_curcle: $button_size - 0.5rem
 .darkmode_button::after
     content:''
     position: absolute
-    background-image: url('/cloud-solid.svg')
+    background-image: url('/assets/img/cloud.svg')
     
     // background-color: white
     background-size: $cloud $cloud
@@ -74,15 +76,22 @@ $button_curcle: $button_size - 0.5rem
     border: 2px solid $grey
 
 
-
 body.darkmode
 
     .darkmode_button
         background: $dark_bg
         border: 2px solid $dark_bg_border
+        background-image: url('/assets/img/stars.svg')
+        background-size: 1rem
+        top: -1px
+        // background-position-x: 1px
+        background-repeat: repeat-y 
+
 
     .darkmode_button.active::before
         // background-color: $moon_bg
         border: 0.1rem solid $moon_bg_border
-        background-image: url('/moon.svg')
+        background-image: url('/assets/img/moon.svg')
+        // background-size: 1rem 1rem
+        
 

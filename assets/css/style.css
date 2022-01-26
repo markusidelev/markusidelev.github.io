@@ -115,6 +115,7 @@ body.darkmode #profile_image {
   width: 45%;
   border-radius: 500px;
   appearance: none;
+  transition: 1s;
 }
 
 .darkmode_button {
@@ -143,7 +144,7 @@ body.darkmode #profile_image {
 .darkmode_button::after {
   content: "";
   position: absolute;
-  background-image: url("/cloud-solid.svg");
+  background-image: url("/assets/img/cloud.svg");
   background-size: 0.9rem 0.9rem;
   left: 1rem;
   top: 50%;
@@ -165,10 +166,14 @@ body.darkmode #profile_image {
 body.darkmode .darkmode_button {
   background: #484848;
   border: 2px solid #202020;
+  background-image: url("/assets/img/stars.svg");
+  background-size: 1rem;
+  top: -1px;
+  background-repeat: repeat-y;
 }
 body.darkmode .darkmode_button.active::before {
   border: 0.1rem solid #DEE1C5;
-  background-image: url("/moon.svg");
+  background-image: url("/assets/img/moon.svg");
 }
 
 * {
