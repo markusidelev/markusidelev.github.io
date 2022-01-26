@@ -8,9 +8,9 @@ $button_curcle: $button_size - 0.5rem
     height: $button_size
     width: 125px
     // border: 1px solid red
-    position: fixed
+    position: absolute
     top: 5px
-    right: 5%
+    right: 0
     // z-index: 10
     display: flex
     justify-content: space-between
@@ -21,12 +21,13 @@ $button_curcle: $button_size - 0.5rem
         width: 45%
         border-radius: 500px
         appearance: none
-        transition: 1s
+        
 
 
 .darkmode_button
     background: $light_bg
     border: 2px solid $light_bg_border
+    transition: 1s
 
 .darkmode_button::before
     content:''
@@ -70,11 +71,25 @@ $button_curcle: $button_size - 0.5rem
     background-image: none
 
 
-    
 .automode_button
-    background: $white
+    // content: AUTO
+    color: black
+    background: $red 
     border: 2px solid $grey
+    background-image: url('/auto.svg')
+    background-size: 1.5rem
+    background-repeat: no-repeat
+    background-position-y: 50%
+    background-position-x: 50%
 
+.automode_button.active
+    background: green
+    background-image: url('/auto.svg')
+    background-size: 1.5rem
+    background-repeat: no-repeat
+    background-position-y: 50%
+    background-position-x: 50%
+    
 
 body.darkmode
 
@@ -83,7 +98,7 @@ body.darkmode
         border: 2px solid $dark_bg_border
         background-image: url('/assets/img/stars.svg')
         background-size: 1rem
-        top: -1px
+        // top: -1px
         // background-position-x: 1px
         background-repeat: repeat-y 
 
@@ -94,4 +109,9 @@ body.darkmode
         background-image: url('/assets/img/moon.svg')
         // background-size: 1rem 1rem
         
+    .automode_button        
+        border: 2px solid $dark_bg_border
+       
+        
+
 

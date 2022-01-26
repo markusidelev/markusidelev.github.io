@@ -25,6 +25,7 @@ let turnLight = (theme) => {
 
 let turnAuto = () => {
   body.classList.remove('darkmode')
+  autoBtn.classList.add('active')
   saveTheme('automode')
   checkAuto()
 }
@@ -55,6 +56,8 @@ let checkLocalTheme = () => {
 checkLocalTheme()
 
 btn.addEventListener('click', function() {
+  autoBtn.classList.remove('active')
+  
   if (body.classList.contains('darkmode')) {
     turnLight('lightmode')
     
