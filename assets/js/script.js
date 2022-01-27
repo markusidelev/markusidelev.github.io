@@ -1,10 +1,13 @@
 "use strict"
 
 /* ============================= Darkmode ======================= */
-const btn = document.querySelector('.darkmode_button')
-const autoBtn = document.querySelector('.automode_button')
+
+const themeBtn = document.querySelector('#darkmode_button')
+const autoBtn = document.querySelector('#automode_button')
+const arrowBtn = document.querySelector('#arrow_button')
 
 const body = document.body
+const btnContainer = document.querySelector(".button_container")
 const currentTheme = localStorage.getItem('styleTheme')
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)")
 
@@ -13,13 +16,13 @@ let saveTheme = (theme) => localStorage.setItem('styleTheme', theme)
 
 let turnDark = (theme) => {
   body.classList.add('darkmode')
-  btn.classList.add('active')
+  themeBtn.classList.add('active')
   saveTheme(theme)
 }
 
 let turnLight = (theme) => {
   body.classList.remove('darkmode')
-  btn.classList.remove('active')
+  themeBtn.classList.remove('active')
   saveTheme(theme)
 }
 
@@ -55,7 +58,7 @@ let checkLocalTheme = () => {
 
 checkLocalTheme()
 
-btn.addEventListener('click', function() {
+themeBtn.addEventListener('click', function() {
   autoBtn.classList.remove('active')
   
   if (body.classList.contains('darkmode')) {
@@ -71,3 +74,15 @@ btn.addEventListener('click', function() {
 autoBtn.addEventListener('click', function() {
   turnAuto()
 })
+
+arrowBtn.addEventListener('click', function() {
+  btnContainer.classList.toggle("active")
+})
+
+
+
+/* ===================== Author Button ======================= */
+
+$(".author .animated").hover(function(){
+	$(".author .animated").toggleClass("rubberBand infinite");
+});
