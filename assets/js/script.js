@@ -83,6 +83,6 @@ arrowBtn.addEventListener('click', function() {
 
 /* ===================== Author Button ======================= */
 
-$(".author .animated").hover(function(){
-	$(".author .animated").toggleClass("rubberBand infinite");
-});
+// $(".author .animated").hover(function(){
+// 	$(".author .animated").toggleClass("rubberBand infinite");
+// });

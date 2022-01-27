@@ -1,0 +1,53 @@
+$main_gradient: #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82;
+
+
+.gradient-border {
+    --borderWidth: 10px;
+    background: #1D1F20;
+    position: relative;
+    border-radius: 50%;
+  }
+  .gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, $main_gradient);
+    border-radius: 50%;
+    z-index: -1;
+    animation: animated_gradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+  
+  
+  @keyframes animated_gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+.author
+    a 
+        p {
+        background: linear-gradient(60deg, $main_gradient);
+        background-size: 200% 200%;
+        animation: animated_gradient 2s ease-in-out infinite;
+        background-clip: text;
+        -webkit-background-clip:text;
+        
+        // text-align:center;
+        // transition: color .2s ease-in-out;
+       
+        }
+    a:hover p {
+            color:rgba(0,0,0,0);
+            }
+            
