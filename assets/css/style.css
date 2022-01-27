@@ -185,7 +185,7 @@ body.darkmode .button_container::after {
   }
 }
 .author a p {
-  background: rainbow(to right, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
   background-size: 200% 200%;
   animation: animated_gradient 2s ease-in-out infinite;
   background-clip: text;
@@ -193,17 +193,6 @@ body.darkmode .button_container::after {
   color: rgba(0, 0, 0, 0);
 }
 
-@keyframes rainbow {
-  0% {
-    background-position: left;
-  }
-  50% {
-    background-position: right;
-  }
-  100% {
-    background-position: left;
-  }
-}
 * {
   box-sizing: border-box;
 }
@@ -295,7 +284,7 @@ a:hover {
 .profile_img__container {
   margin-left: 5%;
   position: relative;
-  height: 7.5rem;
+  height: 8rem;
   margin: 0 auto;
 }
 
