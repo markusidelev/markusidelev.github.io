@@ -37,17 +37,20 @@ $main_gradient: #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #
 .author
     a 
         p {
-        background: linear-gradient(60deg, $main_gradient);
+        background: rainbow(to right, $main_gradient);
         background-size: 200% 200%;
         animation: animated_gradient 2s ease-in-out infinite;
         background-clip: text;
         -webkit-background-clip:text;
+        color:rgba(0,0,0,0);
         
         // text-align:center;
         // transition: color .2s ease-in-out;
        
         }
-    a:hover p {
-            color:rgba(0,0,0,0);
-            }
-            
+   
+        @keyframes rainbow { 
+            0%{background-position:left}
+            50%{background-position:right}
+            100%{background-position:left}
+          }
