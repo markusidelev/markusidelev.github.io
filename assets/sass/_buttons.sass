@@ -1,33 +1,63 @@
+$button_conteiner_heigth: 4rem
+$button_container_width: 60px
+
+$button_height: 1.6rem
+$button_width: 100%
+$button_curcle: 1rem
 $cloud: 0.9rem
-$button_size: 1.5rem
-$button_curcle: $button_size - 0.5rem
 
 
 
 .button_container 
-    height: $button_size
-    width: 125px
+    height: $button_conteiner_heigth
+    width: $button_container_width
+    padding: 0 2px
     // border: 1px solid red
     position: absolute
-    top: 5px
-    right: 0
-    // z-index: 10
+    top: -40px
+    right: -10%
+    flex-wrap: wrap
+    flex-direction: column
+    justify-content: space-around
+    z-index: 10
     display: flex
-    justify-content: space-between
+    // border-radius: 5%
+    // border: 1px solid red
+    
+    background: $light_blue
+    transition: 0.3s
 
-    button
-        position: relative
-        cursor: pointer
-        width: 45%
-        border-radius: 500px
-        appearance: none
-        
+.button_container.active
+    top: 0px
 
+.button_container::after
+    content: ''
+    position: absolute
+    height: $button_container_width
+    width: $button_container_width
+    top: 67%
+    left: 0
+    background: $light_blue
+    border-radius: 100% 100%
+    z-index: -1
+    transition: 0.3s
+
+
+ 
 
 .darkmode_button
+    position: relative
+    cursor: pointer
+    height: $button_height
+    width: $button_width
+    border-radius: 500px
+    appearance: none
     background: $light_bg
     border: 2px solid $light_bg_border
+    background-position-x: 2px
+
     transition: 1s
+    // margin: 0 auto
 
 .darkmode_button::before
     content:''
@@ -43,6 +73,7 @@ $button_curcle: $button_size - 0.5rem
     border: 0.1rem solid $sun_bg_border
     border-radius: 50%
     transform: translateY(-50%)
+    // transition: 1s
        
 .darkmode_button.active::before
     left: auto
@@ -72,46 +103,48 @@ $button_curcle: $button_size - 0.5rem
 
 
 .automode_button
+    position: relative
+    cursor: pointer
+    height: $button_height
+    width: $button_width
+    border-radius: 500px
+    appearance: none
     // content: AUTO
     color: black
-    background: $red 
-    border: 2px solid $grey
-    background-image: url('/auto.svg')
+    background: $auto_button_off 
+    border: 2px solid $light_bg_border
+    background-image: url('/assets/img/auto.svg')
     background-size: 1.5rem
     background-repeat: no-repeat
     background-position-y: 50%
     background-position-x: 50%
 
 .automode_button.active
-    background: green
-    background-image: url('/auto.svg')
+    background: $auto_button_on
+    background-image: url('/assets/img/auto.svg')
     background-size: 1.5rem
     background-repeat: no-repeat
     background-position-y: 50%
     background-position-x: 50%
+
+.arrow
+    position: absolute
+    color: white
+    font-size: 20px
+    cursor: pointer
+    height: 1.2rem
+    width: 1.2rem
+    top: 4.1rem
+    background: none
+    left: 27%
+    border: none
+    appearance: none
+    z-index: 15
+  
+
+//  BUTTONS DARKMODE IN DURKMODE SASS FILE
+
     
-
-body.darkmode
-
-    .darkmode_button
-        background: $dark_bg
-        border: 2px solid $dark_bg_border
-        background-image: url('/assets/img/stars.svg')
-        background-size: 1rem
-        // top: -1px
-        // background-position-x: 1px
-        background-repeat: repeat-y 
-
-
-    .darkmode_button.active::before
-        // background-color: $moon_bg
-        border: 0.1rem solid $moon_bg_border
-        background-image: url('/assets/img/moon.svg')
-        // background-size: 1rem 1rem
-        
-    .automode_button        
-        border: 2px solid $dark_bg_border
-       
-        
+      
 
 
